@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contact page</h1>
+
+    <form autocomplete="off" method="post" action="about.html">
+        <!-- form elements ==> inline Elements -->
+        <label>First Name:</label>
+        <input type="text" name="firstName" autocomplete="off" > <br>
+        <label>Last Name:</label>
+        <input type="text" name="lastName" required> <br>
+        <!-- nouran@hotmail.com -->
+        <input type="email" name="userEmail" placeholder="enter your email" > <br>
+
+        <input type="number" placeholder="enter your age" name="userAge"> <br>
+
+        <label>Shipping Area</label>
+        <!-- <input type="text" name="shippingArea" value="Alex" disabled> -->
+        <input type="text" name="shippingArea" value="Alex" readonly>
+
+        <input type="text" name="familyName" placeholder="family Name" >
+        <input type="text" name="IDCard" placeholder="ID Card" minlength="10" maxlength="14" >
+
+        <input type="password" name="userPassword"
+         placeholder="enter your password" title="password that must contain 8 or more characters that are of at least one number, and one uppercase and lowercase letter"
+         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+
+
+         <br>
+        <label>Gender</label>
+         <input type="radio" name="userGender" value="male"> <label>Male</label>
+         <input type="radio" name="userGender" value="female"> <span>Female</span>
+
+        <br>
+         <label>Track</label>
+         <input type="checkbox" name="userTracks" value="fr"> <span>Frontend</span>
+         <input type="checkbox" name="userTracks" value="br"> <span>Backend</span>
+         <input type="checkbox" name="userTracks" value="mo"> <span>Mobile</span>
+         <input type="checkbox" name="userTracks" value="nt"> <span>Network</span>
+
+         <br>
+
+         <!-- <label>Courses</label> -->
+         <select name="courses" multiple >
+            <option selected  disabled>Choose your course</option>
+            <option value="0">Frontend</option>
+            <option value="1">backend</option>
+            <option  value="2">Network</option>
+         </select>
+         <!-- datalist ==> search -->
+           <select name="courses"  >
+            <option selected  disabled>Choose your course</option>
+            <option value="0">Frontend</option>
+            <option value="1">backend</option>
+            <option  value="2">Network</option>
+            <option  value="2">Network</option>
+            <option  value="2">Network</option>
+            <option  value="2">Network</option>
+            <option  value="2">Network</option>
+            <option  value="2">Network</option>
+         </select>
+
+         <label>Address</label>
+         <textarea placeholder="enter your address"></textarea>
+
+         <input type="color">
+         <input type="date">
+         <input type="datetime-local">
+         <input type="month">
+         <input type="file" multiple>
+
+         <input type="range" name="range">
+
+
+
+         <!-- button ==> submit -->
+        <button>Register</button>
+        <input type="submit" value="Sign in">
+        <input type="reset" value="Clear" >
+        <button type="reset">Clear Data</button>
+    </form>
+    <button>Send</button>
+</body>
+</html>
