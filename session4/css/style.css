@@ -1,0 +1,117 @@
+/* Reset Style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+
+
+/* global style */
+.container{
+    width: 80%;
+    margin: auto;
+}
+.overlay{
+    background: rgb(0 0 0 / 56%);
+    height: 100%;
+    color: white;
+    padding: 7% 0;
+}
+.text-center{
+    text-align: center;
+}
+.btn-transparent{
+    margin-top: 3%;
+    background-color: transparent;
+    color: white;
+    padding: 1%;
+    border: 2px solid ;
+}
+.bg-light{
+    background-color: rgb(228, 228, 228);
+}
+.padding-y{
+    padding: 5% 0%;
+}
+
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
+.bg-dark{
+    background-color: rgb(51, 51, 51);
+}
+.d-inline-block{
+    display: inline-block;
+}
+
+
+
+/* custom style */
+nav{
+    padding: 2% 0;
+}
+nav a{
+    color: white;
+}
+nav ul {
+    width: 21%;
+}
+nav li {
+    margin-left:4%;
+}
+
+#banner{
+    background-image: url(../images/cascade-boat-clean-china-natural-rural_1417-1356.avif);
+    /* height: 600px; */
+    /* background-repeat: no-repeat; */
+    background-color: black;
+    background-size: 100% 100%;
+    /* background-position: ==> search; */
+    
+}
+
+hr{
+    width: 5%;
+    margin: 3% auto;
+    border: 3px solid;
+}
+
+.card{
+    width: 30%;
+    display: inline-block;
+    background-color: white;
+
+}
+.card .card-img{
+    width: 100%;
+}
+.card-details{
+    padding: 3%;
+}
+.img-circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.icon-style{
+        font-size: 29px;
+    border: 2px solid;
+    padding: 1%;
+    border-radius: 50%;
+    color: red;
+}
