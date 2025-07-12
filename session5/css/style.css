@@ -1,0 +1,89 @@
+/* Reset Style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style:none;
+}
+
+
+/* global Style */
+.container{
+    width: 80%;
+    margin: auto;
+}
+.bg-light{
+    background-color: rgb(231, 230, 230);
+}
+.padding-top-bottom{
+    padding: 4% 0%;
+}
+.align-self-start{
+    align-self: flex-start;
+}
+.bg-dark{
+    background-color: black;
+}
+.d-flex{
+    display: flex;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.align-items-center{
+    align-items: center;
+}
+.text-white{
+    color: white;
+}
+.width-30{
+    width: 30%;
+}
+
+
+/* custom style */
+
+nav h1 {
+   font-size: 40px;
+}
+
+/* #about-section{
+        padding: 4% 0%;
+} */
+
+.flex-box{
+    display: flex;
+    background-color: black;
+    /* justify-content: ==> flex-start (default) , flex-end , center , space-between , space-around , space-evenly; */
+    justify-content: space-between;
+    /* flex-wrap : nowrap (default) , wrap */
+    flex-wrap:  wrap;
+    /* align-items: stretch(default) , flex-start , flex-end , center; */
+    align-items: center;
+    height: 650px;
+    /* align-content flex-start , flex-end , center , space-between , space-around , space-evenly */
+    /* flex-direction ==> row (default) , row-reverse , column , column-reverse  */
+
+    /* flex-flow ==> flex-direction + flex-wrap */
+    /* flex-flow: wrap  row-reverse; */
+
+
+}
+
+
+#about-section .card{
+    background-color: white;
+    padding: 2%;
+    border:2px solid;
+
+}
+
+
+#services-section .card{
+
+}
