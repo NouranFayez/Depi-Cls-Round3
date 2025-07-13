@@ -1,0 +1,147 @@
+/* Reset Style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style:none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* global Style */
+.container{
+    width: 80%;
+    margin: auto;
+}
+.bg-light{
+    background-color: rgb(231, 230, 230);
+}
+.padding-top-bottom{
+    padding: 4% 0%;
+}
+.align-self-start{
+    align-self: flex-start;
+}
+.bg-dark{
+    background-color: black;
+}
+.d-flex{
+    display: flex;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.align-items-center{
+    align-items: center;
+}
+.text-white{
+    color: white;
+}
+.width-30{
+    width: 30%;
+}
+.bg-blue{
+    background-color: lightblue;
+}
+.bg-gold{
+    background-color: goldenrod;
+}
+.position-relative{
+    position: relative;
+}
+.position-absolute{
+        position: absolute;
+   
+}
+.custom-position{
+     bottom: 7%;
+    width: 80%;
+    left: 10%;
+}
+
+
+/* custom style */
+header{
+    background-color: blue;
+    padding: 2% 0;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+        z-index: 99999999;
+}
+
+nav h1 {
+   font-size: 40px;
+}
+.custom-section{
+    height: 600px;
+}
+
+#up-btn{
+    background-color: teal;
+    color: white;
+    /* padding: 1%; */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 10px;
+    /* position==> fixed , sticky , relative , absolute , static (default) */
+    /* top , left , right , bottom , z-index */
+    position: fixed;
+    bottom: 5%;
+    right: 4%;
+}
+
+#services-section .card{
+    width: 50%;
+}
+#services-section .card img{
+    width: 100%;
+    display: block;
+}
+
+#about-section .card{
+    width: 50%;
+    background-color: white;
+
+}
+#about-section .card img{
+    width: 100%;
+}
+
+.overlay{
+    background-color: rgba(0, 0, 0, 0.623);
+    position: absolute;
+        width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+}
+.card h3:hover{
+    color: blue;
+    background-color: bisque;
+    font-size: 30px;
+}
+
+.card:hover h3{
+     color: blue;
+    background-color: bisque;
+    font-size: 30px;
+}
+
+.card:hover .overlay{
+    display: block;
+}
+
