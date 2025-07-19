@@ -136,7 +136,7 @@ nav h1 {
 }
 
 .card:hover h3{
-     color: blue;
+    color: blue;
     background-color: bisque;
     font-size: 30px;
 }
