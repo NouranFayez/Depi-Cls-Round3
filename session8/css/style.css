@@ -1,0 +1,184 @@
+/* Reset style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* global style */
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Custom style */
+
+
+/* pseudo Class */
+
+.custom-input {
+    width: 40%;
+    margin-top: 2%;
+    border: 2px solid blue;
+    padding: 1%;
+}
+
+.custom-input:focus {
+    border-color: red;
+    outline: 0;
+}
+
+
+input:disabled {
+    border: 2px solid teal;
+    background-color: lightblue !important;
+}
+
+input:read-only {
+    background-color: lightpink;
+}
+
+input:checked {
+    width: 30px;
+    height: 30px;
+}
+
+ul li:first-child {
+    color: blue;
+}
+
+ul li:last-child {
+    color: red;
+}
+
+.custom-div h2:first-child {
+    background-color: lightgray;
+}
+
+/* .custom-div .custom-element:last-child{
+    color: red;
+} */
+
+.custom-div h2:nth-child(3) {
+    background-color: lightgray;
+    color: red;
+    border: solid;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid rgb(158, 158, 158);
+    padding: 5px;
+}
+
+th {
+    background-color: teal;
+    color: white;
+}
+
+/* even , odd */
+tr:nth-child(even) {
+    background-color: rgb(233, 233, 233);
+}
+
+tr:nth-child(odd) {
+    background-color: lightpink;
+}
+
+tr:nth-child(even):hover {
+    background-color: maroon;
+    color: white;
+}
+
+
+a:link {
+    color: goldenrod;
+}
+
+a:visited {
+    color: rgb(17, 221, 221);
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: red;
+    font-size: 20px;
+}
+
+h2::first-letter {
+    color: red;
+    font-size: 35px;
+}
+
+h2::first-line {
+    color: blue;
+}
+
+::marker {
+    color: blue;
+    font-size: 30px;
+}
+
+
+::selection {
+    background-color: goldenrod;
+    color: white;
+}
+
+::placeholder {
+    color: blue;
+}
+
+
+h2 {
+    background-color: lightblue;
+    position: relative;
+}
+
+h2::before {
+    content: "Web Design";
+    background: lightgray;
+    padding: 2%;
+    display: inline-block;
+}
+
+h2::after {
+    content: "";
+    color: red;
+    width: 30px;
+    height: 30px;
+    background-color: lightblue;
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+}
+
+h1::before {
+    content: '\f015';
+    font-family: 'Font Awesome 6 Free';
+}
+
+.card{
+    width: 23%;
+    box-shadow: 0px 0px 5px 3px lightgray;
+    padding: 1%;
+    margin-top: 2%;
+}
+
+

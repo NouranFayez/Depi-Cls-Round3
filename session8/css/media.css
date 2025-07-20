@@ -1,0 +1,55 @@
+/* rule  @media
+type (all , screen , print , speetch) 
+breakpoint ==> max-width , min-width , range  */
+
+/* bootstrap breakpoints ==> https://getbootstrap.com/docs/5.3/layout/breakpoints/ */
+
+/* 500 */
+
+/* 0 : 767.98 */
+@media (max-width: 767.98px) {
+    .card {
+        width: 48%;
+    }
+}
+
+
+/* 0 : 575.98 */
+@media (max-width: 575.98px) {
+    .card {
+        width: 100%;
+    }
+
+}
+
+
+@media (min-width:992px) {
+    .card {
+        background-color: teal;
+        color: white;
+    }
+}
+
+
+@media (min-width:600px) and (max-width:800px) {
+    .card {
+        background-color: maroon;
+        color: white;
+        font-size: 20px;
+    }
+
+    .hidden-element {
+        display: none;
+    }
+}
+
+
+@media print {
+    .hidden-element{
+        display: block;
+    }
+    .card{
+        width: 100%;
+        border: 2px solid ;
+    }
+}
