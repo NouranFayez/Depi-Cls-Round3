@@ -1,0 +1,204 @@
+
+:root{
+    --mainColor : rgb(68, 68, 205);
+    --dark : rgb(39, 38, 38);
+    --light : #eee;
+    --font-lg: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* global style */
+.container {
+    width: 80%;
+    margin: auto;
+}
+.bg-mainColor{
+    background-color: var(--mainColor);
+}
+.text-mainColor{
+    color: var(--mainColor);
+}
+.bg-light{
+    background-color: var(--light);
+}
+.font-lg{
+  font-size: var(--font-lg);  
+}
+.bg-teal{
+    background-color: teal;
+}
+.text-white{
+    color: white;
+}
+
+/* custom style */
+
+/* .card{
+    width: 40%;
+    box-shadow: 0px 0px 4px 3px lightgray;
+    padding: 1%;
+    margin-top: 3%;
+}
+
+.card p {
+    color: blue;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.card p:hover{
+    color: goldenrod;
+} */
+
+
+/* Nesting Css selector */
+
+.card {
+    width: 40%;
+    box-shadow: 0px 0px 4px 3px lightgray;
+    padding: 1%;
+    margin-top: 3%;
+
+    & p {
+        color: blue;
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 2;
+
+        &:hover {
+            color: goldenrod;
+        }
+    }
+}
+
+/* simple css selector */
+div.card.active#div-element {
+    background-color: lightgray;
+}
+
+/* attribute css selector */
+[name] {
+    background-color: aqua;
+}
+
+[type=password] {
+    width: 30%;
+    padding: 1%;
+    background-color: lightgray;
+}
+
+[href^=https] {
+    color: red;
+    font-size: 25px;
+}
+
+[href$=html] {
+    color: green;
+}
+
+[href*=w3schools] {
+    color: teal;
+    font-size: 35px;
+}
+
+
+h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    /* line-clamp ==> search */
+    /* lowsercase , uppercase , capitalize */
+    text-transform: capitalize;
+    margin-top: 4%;
+    text-shadow: 0px 0px 9px #f52b2b;
+    font-size: 44px;
+    /* color: white; */
+    letter-spacing: 2px;
+}
+
+.custom-card{
+    box-shadow: 0px 0px 5px 4px rgb(204, 203, 203);
+    padding: 2%;
+    margin-top: 2%;
+    font-size: 20px;
+
+    /* px , em , rem */
+    & p{
+        color: teal;
+        /* font-size: 2em; */
+        font-size: 2rem;
+    }
+}
+
+.card-img{
+    width: 50%;
+    box-shadow: 0px 0px 5px 3px lightgray;
+    margin: 3% auto;
+    & img{
+        width: 100%;
+        display: block;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+    }
+}
+
+.card-transform{
+    width: 40%;
+    padding: 2%;
+    display: inline-block;
+    margin-top: 5%;
+    /* transition-property: all; */
+    transition: transform 3s;
+    border: 10px solid var(--light);
+  
+}
+.card-transform:hover{
+    transform: translateX(100px);
+    transform: translateX(100%);
+    transform: translateX(-100%);
+    transform: translateY(50%);
+    transform: translateY(-50%);
+    transform: translate(100px , 50%);
+    transform: rotate(30deg);
+    transform: rotateX(180deg);
+    transform: rotateY(180deg);
+    transform: rotateY(360deg);
+    transform: scaleX(1.5);
+    transform: scaleX(0.5);
+    transform: scaleX(0);
+    transform: scaleY(1.5);
+    transform: scaleY(0);
+    transform: scale(1.5);
+    transform: skewX(50deg);
+    transform: skewX(-50deg);
+    transform: skewY(50deg);
+    transform: skew(50deg , 50deg);
+    /* matrix() ==> scaleX() , skewY() , skewx() , scaleY() , translateX() , translate: Y(); */
+    transform: matrix(1.5 , 0 , 0.5 , 0.8 , 100 , 200 );
+    transform: scale(1.5) rotate(30deg);
+    background-color: goldenrod;
+    border: 10px solid maroon;
+}
+
+
+
+/* 
+   variable 
+   simple css selector
+   nesting css selector
+   attributes css selectors
+   aspect-radio
+   text-transform 
+   text-overflow
+   white-space
+
+*/
