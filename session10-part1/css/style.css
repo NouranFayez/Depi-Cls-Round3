@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* direction: rtl;
+    text-align: right; */
+}
+
+
+/* global style */
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+/* custom style */
+
+.card-animation {
+    width: 200px;
+    aspect-ratio: 1/1;
+    background-color: goldenrod;
+    /* animation-name: changeByColor; */
+    animation-duration: 6s;
+    animation-iteration-count: 2;
+    animation-direction: reverse;
+    animation-direction: alternate;
+    animation-direction: alternate-reverse;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+
+}
+
+.card-animation:hover {
+    /* background-color: lightblue; */
+    /* animation-name: changeByColor ;
+    animation-duration: 3s; */
+}
+
+@keyframes changeByColor {
+    /* from {
+        background-color: red;
+    }
+
+    to {
+        background-color: black;
+    } */
+     0%{
+         background-color: red;
+        }
+        25%{
+         transform: translateX(400px);
+        background-color: black;
+        border-radius: 50%;
+       
+     }
+     50%{
+        background-color: lightblue;
+        transform: translate(400px , 400px);
+     }
+     75%{
+        background-color: rgb(106, 218, 32);
+        transform: translate(0px , 400px) rotate(180deg);
+
+     }
+     100%{
+        background-color: aqua;
+        border: 10px solid ;
+     }
+
+}
+
+.card-prespective{
+    perspective: 1000px;
+}
+
+.card-transform3d{
+    width: 50%;
+    padding: 4%;
+    margin: 3% auto;
+    background-color: #eee;
+    transition: 2s;
+    /* backface-visibility: hidden; */
+    /* transform: rotateY(180deg); */
+    /* transform-style: preserve-3d; */
+    
+}
+
+.card-transform3d:hover{
+    transform: rotateY(180deg);
+}
