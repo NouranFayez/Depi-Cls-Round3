@@ -1,0 +1,16 @@
+// Mathematical operations ==> + - / * ** %  , ++ , --
+
+//// Assignment operations ==> += , -= , /= , *= , %=
+
+////// Comparison opertaors ==>( > , >= , < , <= , == , === , != , !==) ==> return boolean
+
+//// logical operators ==> && || !
+
+/// unary operator ==> typeof
+
+
+/// ternary operators ==> (condition) ? true condition : false condition
+
+/// false value , truthy value
+
+looping ==> for , while , do-while
