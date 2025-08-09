@@ -1,0 +1,34 @@
+slice(start , end)
+concate()
+reverse()
+toString()
+join()
+map()
+
+
+/// string methods 
+startsWith()
+endsWith()
+includes()
+splice()
+replace()
+replaceAll()
+upperCase()
+lowerCase()
+trim()
+
+
+//// number methods
+Math.random()
+Math.ceil()
+Math.round()
+Math.floor()
+Math.max()
+Math.min()
+Math.abs()
+Math.trunc()
+
+
+
+isNaN()
+
