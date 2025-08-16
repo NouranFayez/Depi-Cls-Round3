@@ -1,0 +1,8 @@
+.card{
+    width: 40%;
+    padding: 2%;
+    background-color: teal;
+    font-size: 20px;
+    color: white;
+    margin: auto;
+}
