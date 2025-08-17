@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 3000px;
+}
+
+.card{
+    /* width: 40%; */
+    padding: 2%;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 4px lightgray;
+        border: 2px solid;
+}
+.card button{
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    padding: 2%;
+}
+
+#scroll-card{
+    width: 30%;
+    padding: 2%;
+    font-size: 25px;
+    height: 200px;
+    /* background-color: lightgray; */
+    overflow: auto;
+}
+
+#topArrow{
+    position: fixed;
+    bottom: 5%;
+    right: 20px;
+    font-size: 40px;
+    color: red;
+    
+}
+.d-none{
+    display: none;
+}
+.owl-nav{
+    text-align: center;
+}
