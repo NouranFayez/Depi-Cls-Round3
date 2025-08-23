@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+form{
+    width: 70%;
+    margin: auto;
+
+}
+input{
+    width: 100%;
+   
+    font-size: 20px;
+}
+button{
+    padding: 2%;
+    font-size: 20px;
+}
+
+p{
+    color: maroon;
+     margin-bottom: 2%;
+}
