@@ -1,0 +1,3 @@
+install node js ==> https://nodejs.org/en/download
+cmd => npm i --g typescript
+open typescript folder ==> tsc fileName.ts
