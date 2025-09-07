@@ -4,3 +4,5 @@ boostrap ==> npm install bootstrap
 link bootstrap css & js files in angular.json
 run app ==> ng serve -open / ng s -o  / ng s
 create component ==> ng g c folderName/companentName - ng generate component folderName/componentName
+--------------------------
+to create node-module file ==> npm install
