@@ -1,0 +1,16 @@
+<form class="row">
+    <div class="col-6">
+        <input type="text" class="form-control" placeholder="enter your name"
+         (input)="handleInput($event)">
+
+         <!-- template reference -->
+          <input type="text" class="form-control" #userNameInput
+           placeholder="enter your name"
+         (input)="handleInputEvent(userNameInput)">
+        <h2>{{inputValue}}</h2>
+
+    </div>
+    <div class="col-6">
+        <input type="text" class="form-control" placeholder="Search" (keyup.enter)="handleSearch()" >
+    </div>
+</form>

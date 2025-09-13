@@ -1,0 +1,30 @@
+<h2>
+    {{title}}
+</h2>
+
+<h1>{{getName("Zein" , "Fayez")}}</h1>
+
+<h3>{{20 / 5}}</h3>
+
+<h3 class="text-primary">{{num + num2}}</h3>
+
+<img src="{{imagePath}}" width="40%" alt="">
+
+<img [src]="imagePath" width="40%" alt="">
+
+<div class="row">
+    <div [class]="divClass">
+        <input [type]="inputType" [placeholder]="placeholder" class="form-control">
+
+    </div>
+
+    <div class="col-8" [innerText]="divText">
+        
+    </div>
+    <div class="col-4" [innerHTML]="h3Tag">
+       
+    </div>
+
+    <button class="btn btn-primary" (click)="handleClick()">Click here</button>
+   
+</div>

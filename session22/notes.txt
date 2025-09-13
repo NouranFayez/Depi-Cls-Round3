@@ -1,0 +1,3 @@
+-- data binding ==> one way binding ==> interpolation {{}}
+                                    ==> property binding []
+                                    ==> event binding ()
