@@ -1,1 +1,61 @@
-<p>about works!</p>
+<form class="row gy-3 mt-3">
+    <div class="col-4">
+        <input type="text" [(ngModel)]="model.name"
+         name="userName" class="form-control"
+          placeholder="enter your name">
+        <h4>{{userName}}</h4>
+    </div>
+     <div class="col-4">
+        <input type="text" [(ngModel)]="model.email" name="email" class="form-control" placeholder="enter your Email">
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" (click)="handleClick()">Add User</button>
+    </div>
+</form>
+
+<hr>
+<div class="row">
+    <div class="col-6">
+        <h2>{{h2Text()}}</h2>
+    </div>
+    <div class="col-4">
+        <button class="btn btn-primary" (click)="handleChange()">change text</button>
+    </div>
+</div>
+
+<hr>
+
+
+<!-- @if (showAlert()){
+    <div class="alert alert-primary">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, sint?
+    </div>
+}
+@else {
+    <div class="alert alert-danger">
+        alert in false condition
+    </div>
+}
+
+<button class="btn btn-danger" (click)="handleShowAlert()">Click Here</button> -->
+
+
+
+@if (num() == 1){
+    <div class="alert alert-primary">
+     num = 1   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, sint?
+    </div>
+}
+@else if(num() == 3){
+    <div class="alert alert-warning">
+      num = 3  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, sint?
+    </div>
+}
+@else {
+    <div class="alert alert-danger">
+        alert in false condition
+    </div>
+}
+
+<button class="btn btn-danger" (click)="handleChangeNum(2)">num = 2</button> 
+<button class="btn btn-danger" (click)="handleChangeNum(3)">num = 3</button> 

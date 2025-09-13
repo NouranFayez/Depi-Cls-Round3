@@ -7,6 +7,7 @@ import { Navbar } from './shared/navbar/navbar';
 import { Index } from './pages/index/index';
 import { About } from './pages/about/about';
 import { Contact } from './pages/contact/contact';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Contact } from './pages/contact/contact';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
