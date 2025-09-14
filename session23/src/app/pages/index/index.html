@@ -1,0 +1,18 @@
+<div class="container">
+
+    <h2 [ngClass]="h2Class">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, minima?</h2>
+
+    <h1 [ngClass]="(num == 3)? 'text-danger' : 'text-success' " style="background-color: lightgray;">Frontend</h1>
+
+    <button class="btn btn-primary" (click)="num = 10 ; customColor = 'lightblue'">Change H1 Tag</button>
+
+    <h2 [ngClass]="{'text-warning' : flag}" [ngStyle]="{'background-color' : customColor }">
+        Cls
+    </h2>
+
+    
+
+
+
+
+</div>

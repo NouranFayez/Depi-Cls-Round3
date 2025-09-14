@@ -1,0 +1,53 @@
+
+
+<div class="container">
+    <div class="row gy-3">
+        <form  class="col-12">
+            <div class="row">
+                <div class="col-4">
+                    <input type="text" placeholder="enter post id" class="form-control">
+                </div>
+                 <div class="col-4">
+                    <input type="text" placeholder="enter post title" class="form-control">
+                </div>
+                 <div class="col-4">
+                    <input type="text" placeholder="enter post body" class="form-control">
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary">
+                        Add Post
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        @for(item of posts ; track $index){
+            <div class="col-4">
+                <div class="card" [ngClass]="{'bg-light' : $first , 
+                'bg-warning-subtle' : $last , 'border-primary' : $even , 'border-danger':$odd}">
+                    <div class="card-body">
+                        <h4>{{item.title}}</h4>
+                        <h5>index = {{$index}}</h5>
+                        <h5>first item = {{$first}}</h5>
+                        <h5>count of items = {{$count}}</h5>
+                        <!-- <p>{{item.body}}</p> -->
+                         <!-- localhost:4200/posts/5 -->
+                        <button class="btn btn-success" routerLink="{{item.id}}">Read More</button>
+                        <!-- localhost:4200 -->
+                        <!-- <button class="btn btn-success" routerLink="/posts/{{item.id}}">Read More</button> -->
+                         <button class="btn btn-danger">Delete post</button>
+                         <button class="btn btn-primary">Edit Post</button>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+        <div class="col-4">
+
+            <button class="btn btn-primary" (click)="handleAddPost()">Add Post</button>
+        </div>
+       
+         
+    </div>
+</div>

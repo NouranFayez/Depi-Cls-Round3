@@ -1,0 +1,7 @@
+-- directives ==> attributes directive ==> ngClass 
+                                           ngStyle
+                                           ngModel
+
+              ==> structure directive ==> @if
+                                          @for ($index , $first , $last , $even , $odd , $count)
+                                          @switch                             

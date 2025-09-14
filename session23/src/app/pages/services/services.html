@@ -1,0 +1,35 @@
+<div class="container">
+    @switch(role){
+        @case ('admin'){
+            <h2>Welcome Admin</h2>
+        }
+        @case ('user'){
+            <h2>Welcome User</h2>
+        }
+          @case ('editor'){
+            <h2>Welcome Editor</h2>
+        }
+        @default {
+            <h2>invalid role</h2>
+        }
+
+    }
+
+    <!-- https://angular.dev/api/common/DatePipe -->
+    <h3>{{date }}</h3>
+    <h3>{{date | date}}</h3>
+    <h3>{{date | date : 'shortDate'}}</h3>
+    <h3>{{date | date : 'MMMM-yyyy'}}</h3>
+
+
+    <h4 class="text-primary">{{'ANGULAR' | lowercase}}</h4>
+    <h4 class="text-primary">{{'angular' | uppercase}}</h4>
+    <h4 class="text-primary">{{'frontend track depi' | titlecase}}</h4>
+
+    <h5 class="text-danger">{{user | json}}</h5>
+
+    <h5 class="text-success">{{'Frontend Track' |  slice: 0 : 5}}</h5>
+
+
+
+</div>

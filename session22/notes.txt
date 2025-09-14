@@ -1,4 +1,7 @@
 -- data binding ==> one way binding ==> interpolation {{}}
                                     ==> property binding []
                                     ==> event binding ()
-                ==> two way binding ==>[] + () = [(ngModel)] ==> banana in the box                                    
+                ==> two way binding ==>[] + () = [(ngModel)] ==> banana in the box       
+
+
+-- directives ==> structure directive ==> @if                                             
