@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Global } from '../../services/global';
 
 @Component({
   selector: 'app-navbar',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.css'
 })
 export class Navbar {
+
+
+  constructor(public global : Global){
+
+  }
 
 }

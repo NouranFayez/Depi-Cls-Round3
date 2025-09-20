@@ -1,0 +1,2 @@
+-- sending data from parent to child component ==> @Input()
+-- sending data from child to parent component ==> @Output()

@@ -1,0 +1,11 @@
+<form class="row gy-3 mt-3">
+    <div class="col-6">
+        <input type="text" [(ngModel)]="data.name" name="userName" placeholder="enter Your Name" class="form-control">
+    </div>
+     <div class="col-6">
+        <input type="text" [(ngModel)]="data.email" name="userEmail" placeholder="enter Your Email" class="form-control">
+    </div>
+    <div class="col-4">
+        <button class="btn btn-primary" (click)="handleClick()">Add User</button>
+    </div>
+</form>

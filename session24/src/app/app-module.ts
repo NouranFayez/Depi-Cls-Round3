@@ -9,6 +9,9 @@ import { Posts } from './pages/posts/posts';
 import { Products } from './pages/products/products';
 import { About } from './pages/about/about';
 import { Card } from './components/card/card';
+import { UsersList } from './pages/users-list/users-list';
+import { UserForm } from './components/user-form/user-form';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { Card } from './components/card/card';
     Posts,
     Products,
     About,
-    Card
+    Card,
+    UsersList,
+    UserForm
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
