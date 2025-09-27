@@ -1,29 +1,27 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Global } from '../../services/global';
+import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-actual-login',
   standalone: false,
-  templateUrl: './login.html',
-  styleUrl: './login.css'
+  templateUrl: './actual-login.html',
+  styleUrl: './actual-login.css'
 })
-export class Login {
+export class ActualLogin {
 
-
-  currentDate = new Date()
-
+  
   model = {
-    name:null,
+    // name:null,
     email: null,
     password:null,
-    confirmPassword : null
+    // confirmPassword : null
   }
 
   constructor(private global : Global){}
-  passwordMatch():boolean{
-    return this.model.password === this.model.confirmPassword
-  }
+  // passwordMatch():boolean{
+  //   return this.model.password === this.model.confirmPassword
+  // }
 
 
   handleSubmit(form : NgForm){
@@ -32,7 +30,7 @@ export class Login {
       console.log(form)
       this.global.login(this.model).subscribe({
         next : (res)=>{
-          console.log
+          console.log(res)
         }
       }
       )

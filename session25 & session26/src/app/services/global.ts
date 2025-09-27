@@ -24,6 +24,10 @@ export class Global {
 //   all products ==> https://dummyjson.com/products
 //  single product ==>  https://dummyjson.com/products/6
 
+login(body:any):Observable<any>{
+  return this.http.post('https://full.faedg.com/public/api/client/customer_login' , body )
+}
+
   
 }
 

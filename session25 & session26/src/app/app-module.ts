@@ -10,6 +10,7 @@ import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { SinglePost } from './pages/single-post/single-post';
 import { Login } from './pages/login/login';
 import { FormsModule } from '@angular/forms';
+import { ActualLogin } from './pages/actual-login/actual-login';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     Index,
     Posts,
     SinglePost,
-    Login
+    Login,
+    ActualLogin
   ],
   imports: [
     BrowserModule,
