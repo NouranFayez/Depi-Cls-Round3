@@ -8,6 +8,8 @@ import { Index } from './pages/index/index';
 import { Posts } from './pages/posts/posts';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { SinglePost } from './pages/single-post/single-post';
+import { Login } from './pages/login/login';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { SinglePost } from './pages/single-post/single-post';
     Navbar,
     Index,
     Posts,
-    SinglePost
+    SinglePost,
+    Login
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
     // HttpClientModule // old version
   ],
   providers: [

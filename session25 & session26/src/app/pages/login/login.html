@@ -1,0 +1,95 @@
+<!-- 
+ //// template driven form ==> ngModel 
+/// reactive Form
+ -->
+
+
+<div class="container">
+    <form class="row" #loginForm="ngForm" (ngSubmit)="handleSubmit(loginForm)">
+        <div class="alert alert-primary">
+            <h6>value {{loginForm.value | json}}</h6>
+            <h6>valid {{loginForm.valid}}</h6>
+            <h6>invalid {{loginForm.invalid}}</h6>
+            <h6>dirty {{loginForm.dirty}}</h6>
+            <h6>touched {{loginForm.touched}}</h6>
+            <h6>Submit {{loginForm.submitted}}</h6>
+            <!-- <h6>errors {{loginForm.errors}}</h6> -->
+        </div>
+        <div class="col-12 col-md-6">
+            <input type="text" class="form-control" #userName="ngModel" required minlength="3" [(ngModel)]="model.name"
+                name="userName" placeholder="name">
+            @if(loginForm.submitted && userName.invalid){
+            <div class="alert alert-danger">
+                @if(userName.errors?.['required']){
+                <p>This field is required</p>
+                }
+                @if(userName.errors?.['minlength']){
+                <p>min length = 3</p>
+                }
+            </div>
+
+            }
+            <div class="alert alert-primary">
+                <h6>value {{userName.value}}</h6>
+                <h6>valid {{userName.valid}}</h6>
+                <h6>invalid {{userName.invalid}}</h6>
+                <h6>dirty {{userName.dirty}}</h6>
+                <h6>touched {{userName.touched}}</h6>
+                <h6>errors {{userName.errors | json}}</h6>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <!-- username@domain.subdomain -->
+            <input type="email" class="form-control" required email #userEmail="ngModel" [(ngModel)]="model.email"
+                name="userEmail" placeholder="email">
+            @if((userEmail.dirty || loginForm.submitted) && userEmail.invalid){
+            <div class="alert alert-danger">
+                @if(userEmail.errors?.['required']){
+                <p>this.filed is required</p>
+
+                }
+                @if(userEmail.errors?.['email']){
+                <p>email is invalid</p>
+
+                }
+            </div>
+            }
+        </div>
+        <div class="col-12 col-md-6">
+            <input type="text" class="form-control" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                [(ngModel)]="model.password" #password="ngModel" name="password" placeholder="password">
+            @if (password.invalid && loginForm.submitted) {
+            <div class="alert alert-danger">
+                @if (password.errors?.['required']) {
+                <p>this field is required</p>
+
+                }
+                @if(password.errors?.['pattern']){
+                <p>password" that must contain 8 or more characters that are of at least one number, and one uppercase
+                    and lowercase letter:</p>
+                }
+            </div>
+            }
+
+        </div>
+         <div class="col-12 col-md-6">
+            <input type="text" class="form-control" required
+                [(ngModel)]="model.confirmPassword" #confirmPassword="ngModel" name="confirmPassword" placeholder="password">
+            @if (confirmPassword.invalid && loginForm.submitted && !passwordMatch() ) {
+            <div class="alert alert-danger">
+                @if (confirmPassword.errors?.['required']) {
+                <p>this field is required</p>
+
+                }
+                @if(confirmPassword.dirty && !passwordMatch()){
+                <p>passwords do not match</p>
+                }
+            </div>
+            }
+
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</div>
