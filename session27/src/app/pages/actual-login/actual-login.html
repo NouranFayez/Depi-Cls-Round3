@@ -1,0 +1,58 @@
+<!-- 
+ //// template driven form ==> ngModel 
+/// reactive Form
+ -->
+
+
+<div class="container">
+    <form class="row" #loginForm="ngForm" (ngSubmit)="handleSubmit(loginForm)">
+        <div class="alert alert-primary">
+            <h6>value {{loginForm.value | json}}</h6>
+            <h6>valid {{loginForm.valid}}</h6>
+            <h6>invalid {{loginForm.invalid}}</h6>
+            <h6>dirty {{loginForm.dirty}}</h6>
+            <h6>touched {{loginForm.touched}}</h6>
+            <h6>Submit {{loginForm.submitted}}</h6>
+            <!-- <h6>errors {{loginForm.errors}}</h6> -->
+        </div>
+      
+        <div class="col-12 col-md-6">
+            <!-- username@domain.subdomain -->
+            <input type="email" class="form-control" required email #userEmail="ngModel" [(ngModel)]="model.email"
+                name="userEmail" placeholder="email">
+            @if((userEmail.dirty || loginForm.submitted) && userEmail.invalid){
+            <div class="alert alert-danger">
+                @if(userEmail.errors?.['required']){
+                <p>this.filed is required</p>
+
+                }
+                @if(userEmail.errors?.['email']){
+                <p>email is invalid</p>
+
+                }
+            </div>
+            }
+        </div>
+        <div class="col-12 col-md-6">
+            <input type="text" class="form-control" required 
+                [(ngModel)]="model.password" #password="ngModel" name="password" placeholder="password">
+            @if (password.invalid && loginForm.submitted) {
+            <div class="alert alert-danger">
+                @if (password.errors?.['required']) {
+                <p>this field is required</p>
+
+                }
+                @if(password.errors?.['pattern']){
+                <p>password" that must contain 8 or more characters that are of at least one number, and one uppercase
+                    and lowercase letter:</p>
+                }
+            </div>
+            }
+
+        </div>
+      
+        <div class="col-12">
+            <button class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</div>

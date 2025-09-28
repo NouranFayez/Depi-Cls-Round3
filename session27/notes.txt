@@ -1,0 +1,25 @@
+-- register api ==> https://full.faedg.com/public/api/client/customer_register
+-- body ==> {
+    "first_name": "Customers",
+    "last_name": "Account",
+    "phone": "01022441155",
+    "email": "nouran5@gmail.com",
+    "password": "123456",
+    "confirm_password": "123456"
+}
+-- method : post
+
+
+
+---------------------------------------------------------------------------------------
+
+
+-- update profile ==> https://full.faedg.com/public/api/client/profile/348
+-- method : put
+-- body : {
+    "first_name": "Nouran",
+    "last_name": "Fayez",
+    "phone": "01022663355",
+    "email":"nouran@gmail.com"
+   
+}
