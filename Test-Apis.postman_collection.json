@@ -1,0 +1,2632 @@
+{
+	"info": {
+		"_postman_id": "0bab55c0-7997-4ddb-9031-d16583e2a41a",
+		"name": "Test-Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37417742",
+		"_collection_link": "https://techs-experts.postman.co/workspace/techs-experts-Workspace~a5e143e8-f580-4c7a-811c-763892846937/collection/37417742-0bab55c0-7997-4ddb-9031-d16583e2a41a?action=share&source=collection_link&creator=37417742"
+	},
+	"item": [
+		{
+			"name": "attributes&search Copy",
+			"item": [
+				{
+					"name": "get Attributes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SHOPLOCAL}}/ProductAttributes/0/10",
+							"host": [
+								"{{SHOPLOCAL}}"
+							],
+							"path": [
+								"ProductAttributes",
+								"0",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter by attribute & price",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": [1, 100000],\r\n    \"attributes\": [],\r\n    \"variations\": [],\r\n    \"category_id\": [23]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SHOPLOCAL}}/searchProduct",
+							"host": [
+								"{{SHOPLOCAL}}"
+							],
+							"path": [
+								"searchProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-by-keyword/{page}/{limit}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"keyword\": \"sofa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SHOPLOCAL}}/search-by-keyword/0/15",
+							"host": [
+								"{{SHOPLOCAL}}"
+							],
+							"path": [
+								"search-by-keyword",
+								"0",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "most-searched-keywrods",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SHOPSERVER}}/most-searched-keywords",
+							"host": [
+								"{{SHOPSERVER}}"
+							],
+							"path": [
+								"most-searched-keywords"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients Copy",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Social Login",
+							"item": [
+								{
+									"name": "facebook",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/client/customer_login/facebook",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"client",
+												"customer_login",
+												"facebook"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "google",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/client/customer_login/google",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"client",
+												"customer_login",
+												"google"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "social-login",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"first_name\": \"Ali\",\r\n    \"last_name\": \"Test\",\r\n    \"email\": \"ali@email.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{SHOPLOCAL}}/client/social-login",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"client",
+												"social-login"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"mohd@es.truee\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://full.faedg.com/public/api/client/customer_login",
+									"protocol": "https",
+									"host": [
+										"full",
+										"faedg",
+										"com"
+									],
+									"path": [
+										"public",
+										"api",
+										"client",
+										"customer_login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Customers\",\r\n    \"last_name\": \"Account\",\r\n    \"phone\": \"01234567891\",\r\n    \"email\": \"nouran@user.com\",\r\n    \"password\": \"123456\",\r\n    \"confirm_password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPSERVER}}/client/customer_register",
+									"host": [
+										"{{SHOPSERVER}}"
+									],
+									"path": [
+										"client",
+										"customer_register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forgetPassword",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"customer@customers.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/forget_password",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"forget_password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resetPassword",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"forget_id\": \"\",\r\n    \"password\": \"123456789\",\r\n    \"confirm_password\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/reset_password",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"reset_password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjY3MDRkZTU1ZWU5ZTM2MGQ2ZWY5YWYwMjgxNzlkMzdlNTE1OTBjYThlMzEyNDUyOWRhOTg5MDIwMTlhZmI4NTEzNzJjMGUzNzljYWFmMTkiLCJpYXQiOjE2NjcyMDc2NjcuMDEyNTUsIm5iZiI6MTY2NzIwNzY2Ny4wMTI1NTYsImV4cCI6MTY5ODc0MzY2Ny4wMDQ0MDYsInN1YiI6IjQiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.EFeaVke7xWgo_FYmByxAE5M_HlrDijQx_YNLqMUpNffKttRWMIV-6O7Hs1Z6WsMVKh8zNTZ9h0AaN-jI1kIjWb7z2IrRiYKhPSEaToHWl4SbSrLN-9i_fygyX0-0fgupunjkNaub86fkg1iUfscQsaQLLK0RPF30lU00G5wqiuUxC1aQgVo-4E3ryvVzax5c8y7Qi9B2JSNJtidvXjUcxRmPAF7B9Cxqccj-ycPN3DZ3Yo5IciOiYgNTC92mUF5Hk80jphkDWHkTI68hqNcNmQEJRhMR6mL1Y5IT9QCqCvBli3gcJAdrxwK5FjUYaYD69CWdEHxBHxASBd7GJgWsk50QI8KIzocTdRQaEt4YzxsjJecoNHh_wDmLJkDt00plyciJv1f2JawFfoJyLP9WbuPyzoy4wy6yyftzmyT0lUGOPKjQw5plN1ZVwNisBKvBhNJsW6xxsfjRHwbcHvpMmV_-67gz5VgLTs0ySVUkwBtspXVd3qs1-UcJdorLttTJF5MaJgwCjnUYDKg8wpTKpvGQpSXFy6nNd_E2-RTjty7zzGpTLGF1f7MVUz4Nc1frFlqy4wCq3r_YPNqJcXBvR91hjtReR1l1rBQpcqNWHRedf7Rl23n4_Cgrq541klgMQuX_3I6RCppbWLroaCHJfiB5sMXU18rDIGDx4st3yeA",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/customer_logout",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"customer_logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "profile",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzAwMzllZjMzNTQ4Mzc3OWE1NDE4NTE1MDg3N2VhYTExMTUzNTliMjEyYWE3ZDcwMzIwY2NjMjU4MmRiYTIxNjFjZjQ0YjNlNWM2NDZmMjgiLCJpYXQiOjE2NjczOTcxNTQuMjMyMTk0LCJuYmYiOjE2NjczOTcxNTQuMjMyMTk3LCJleHAiOjE2OTg5MzMxNTQuMjMwNTc4LCJzdWIiOiI2Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.QAwLVGnpPbVbgVEXMCIQS_xpNcMBuKEv_XGsGZT3QfjFY15qVzGgCEIuGw6tr293QUD28NRP2JjyEEGNOAagXLkZN4ipEWOm6qXzQKWjxqxS2rbKI-jxST9CqX_eutd-OqWnwK4V-B_4Hx2EetRZdNo4xTCBcsw87h6BzdCKn5TlMESAp81c-4eCJyqxJK_8EFWNGVhFc7OPI3s9-VUTTaHHTIZ1aZ-eWbOim5o_0xCoXEWZhZFEwq1flVyW5Kf-L2gXdVps24PNmPqPon4kYzKDo0PPeYF46zlrJsHNpxFNw-Q7U-0lYtpD3RO-2V2REDEqbOTnlmkCWaA1F7M3weZGu42ZMAqQy5lFNOvKHhs6IOpN9vSVb27NIeRX0YELVhqaodcB8DK_jE78XGYV9X-xUzmAD6-ZpzmRKOIEx8cOmAIXPneow_T-F6z3TcKX8d0HdpVYPuSUWV6vbZ86MWeEYWwC6XBiVeio57AxGsObVM_aY_teP8B2x8pAe5SQpNBsw8VP5nsihVbHzXVo6VX-PoF6NHVbzU03jZvv3M5XvEuBGLKH3lZjHqV2ONpu_bOOWzXGc_tf9oN4Z5IPfmlM2Gy2XU2OBKx-zv7N7YF_WazEnvCKJNaKl6WekPYUz0GDOKePKV2r_3jxVRWUyvi3ZzfLGR3b8Spg36OEF1Y",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{SHOPSERVER}}/client/profile",
+									"host": [
+										"{{SHOPSERVER}}"
+									],
+									"path": [
+										"client",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update-profile",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTU3NjMzNjZkNGI4YmI5YWJlOWQ4MjI2NzQzZTY3ODM4ZTYzNDhiNmUyOGJlYTU4M2IzN2IyZWU1YmQ3ZjVkODc5YzJhMjNiYzk3NDFiNmIiLCJpYXQiOjE2NzQzNjg4MzcuMzU3MjUxLCJuYmYiOjE2NzQzNjg4MzcuMzU3MjU4LCJleHAiOjE3MDU5MDQ4MzcuMzQ5NDEyLCJzdWIiOiIzNDgiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.By2ESVvMvqfI1kl_36zNgsmIngc32Rtf63IZXOW2hQ1VzgFwBgt7r7YHABJw5mhE38KUBnKeBn6L03LM4ZX54vlmKLXNJEvrXiWiGNxtnFALQT3zoXC1cUNN4DFFJK0ZrfDmlWoGNlQp0Ql50dKgcTjx2F8FDwzdzvJj7cSw84vfkgZH6onsVPsJ453cI3WVmpP6YZ7tik4VoQ4Z57QLeG1qKgpGRwzwBfssKGLYjB8U3P-CZERhjodJ6slS8nD4meI7uYeDt2oeQ-RNFVT3r0fDUJfSZ2M1SoXtLW1maMHQ8K4wuLQO77mdwNmQP4mFQZGDRAiC8qqRG_-nuyQsvIQOb6xY2Qj45wP5d9U7_3RBJdGEboDIKXgIUMZ76T24FJEeEh1wB173wcr1CQ9CKeoTirM4VEmw2aQD-HLMjuBPvlG7o6xi1W-BN15w0N1_ud-_ftJi0tI1I94F-V683xboquRuvT_CZ9g_vZhkcvkHR661VQi6FauItT9DvwQ2knMeDXBRB5CdjULl_BDBevth8wHvQM2AD8HXDJPikcW_Vq8LGylrPQ9TT_59AAia-JBcPlHFRD0kHFo2vW-93vDyv-zKHsdAJtmFmJtSr46pi62_FYn6mUd03sXzIFnNo7LKqLk6i7LaGOLGak-iq_7dHgvbLHzL983P1T27Pd4",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Mohammad\",\r\n    \"last_name\": \"Essam\",\r\n    \"password\": \"123456\",\r\n    \"confirm_password\": \"123456\",\r\n    \"phone\": \"01234567890\",\r\n    \"email\": \"mohd@es.truee\"\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPSERVER}}/client/profile/348",
+									"host": [
+										"{{SHOPSERVER}}"
+									],
+									"path": [
+										"client",
+										"profile",
+										"348"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_language/{language_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDFlMDU2OGViNzY2MzhmY2IxNTBlN2MwODM3ODMyYjBjOGI4NjAxY2NjMzkyYmFkNzU3OTNjNWRlY2ZjMWQ0NmQyM2QxNzlkNGJmZTYxMmYiLCJpYXQiOjE2NjczODMxMjYuNTgwMDg4LCJuYmYiOjE2NjczODMxMjYuNTgwMDk0LCJleHAiOjE2OTg5MTkxMjYuNTc1MjMzLCJzdWIiOiI2Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.u7bQLJngRKuBkFwN_nS4Zmq9BZK9aYU2QK1X2j5u96q6Ky2Bl47CjxuApvn6FEzvv7rW_4c7owJCAijt2sWyzz1xmUjQJZHvKdtGaQZVHV9_9vNriLMBfV4myveqZDhgHyYJnaWxAhQBQ4EoPWWJob6TQJ6e_vidpL-jxM0KDyy0qo68vGHODwCYxYp4g0CxFK-VpfoUekAYLvR8acEvXhr36BcsdSUepL4Z5TkidXf5ze5cNIHDo7iGFOSDHn_D7A5QyrnTJx0ar4tfiYSfkOSIImJLyls0CPf5VJDQocnvcsYWoYj0uED36Y_Nax5r9WgdAoyD1qnl5_MMa8JDU7pNSOjJb4NL2N5giY6OlHh-4kx3hd3y6U9o6VEbblUc_Bkp0jeT9wjshuo8_QUmrpKNi10C6OS1JWayrvuJaUeMBf-zYbcsrryWW85izGqybWgkmkCOkBCOyvqGhlY9VGoz9pbtxJraQZCwotJdrH1bc00lZqxEvZf0RKaJRDqTSm_9FZg9VLoVjCgEfJfN-qLov93QMkjGZxv6-x4HNgn0fiRfDDI0u_TNlvYwurFrPukLn2ct-PWLwSiUlZRNueBGT9_fJZwkf_qRqNyMtWXLBnwDPrtYm1mriB1I9-4uY0Anig6MbMwvaZbFcZ0SsYD1QYcvA6xuPc227sIHM6A",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/language/4",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"language",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guestLogin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fingerprint\": \"Infinix/X682C-GL/Infinix-X682C:10/QP1A.190711.020/220729V366:user/release-keys\",\r\n    \"timestamp\": \"12365478985\",\r\n    \"fcm_token\": \"ABC123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/guest-login",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"guest-login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update-user-image",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNGQ0ZmQ2NWE2MjgyNmU0NjQzYWZjMGM5Y2IwMWVmZDBiNDA5YjE1MjZjMGE0NDBhZDIyNDAwYjcyNDRiM2IxNGMzM2UwYjljNzNiMzFmYzkiLCJpYXQiOjE2Njk3MzIwOTUuNDAwODg3LCJuYmYiOjE2Njk3MzIwOTUuNDAwODkyLCJleHAiOjE3MDEyNjgwOTUuMzkzNzc2LCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.T-pLWy_FZNpCkxz6RVzqpvEqcb-nVP3J9XjpjgChCibX6i6wjeJk7m978FkDOtzv7N9sgmnFmSa6j41KekZ8bbB7R2v1RkPw-PMKMX0kYbgkyEiuq1tq-2xSdfBIVCHEgj__Ney7tJfOeqXE6x46CkP9gT4WR0Pth2Dw-hQ1s_jGi5GWI_WtiIOU1qG1Ty93TJxSD50FPL0SmwBn8TwrCneLOn1fh9kIpjpuW2Et1yHXKBe7jh8OgRQ9SYyXvaAbnyVKQdsRFFScMli7bCY4f16NQczrojK6Nk6Eb-s2wvpRHnwVqe2FX_OgWJ_oorwaD6UcBu4LGkU1Zh6UkPM5eSIM3PdD7WO1b9MVDTXP69mqQQxF4hEj1uXRbFm8MEeK4BPWF3z9wpQRsAd79eovfx1r5KXJ_5XZ-xGMu4hctY_Wan7_wmU_7eutK8EJWpQ3mVOvm_R0CGiqoZc5fuCV2zryPjviubdyxqgnS0Hp4nY00JV7Bi_VAFNGaDjhfhDBCPqP92ciVqUjE7Mo3a_aOyjgCVSZWo-sILqN23bgzB7yIebOjIhQZrJ53m8Jbogf_oQ7WEzWx3QLpyssKxYDDJqMmWaMy7CD9ZH2YAaolb9fuWQUP0NfA_aR6pC8WUUKEFZpT5ZJTnRInUw_6KWdSQcmSBiRSZ87yfO99kN1fHI",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/TechsExperts/Downloads/DK5JPARF15PV0eXjsQ2yqZz9RSK57AfqMA8WoJRj.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/update-profile-image",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"update-profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "change-password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM4OWE4MWYxZWY1NDU3YjE0MmI3Mjk4NjJjMTllM2M4ZmM2NjhlMGI1MmZlYWI3MWE5NWI0ZTljMDY4YWI0NTVkNWRmODZmNjBlN2M3YzciLCJpYXQiOjE2NzE2OTY1NTguODA4NzAxLCJuYmYiOjE2NzE2OTY1NTguODA4NzA0LCJleHAiOjE3MDMyMzI1NTguODAzNjM2LCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.f21rTftnz8Bq2_MbIUVqHzR4ZxmgUB8irlZTIJuozwumFz7BTuByoj2pnNpvVEUFNnIAO4g68S-du7OGm9FbaRujGSvAhyIU3uurxXHvNpR6oCVpqHHlDzqEe3SbtXYf6ieSJ5B7qZDhd5oYKfks9shVAbRs7NQdWHEcLQNXHXQmFgPR3cOIEVRPCQyI4ndMZezgo-lvoRBYH805u2u3WDHPutwsYJrR6HHj_omdsjqAGFyozMq4gMJpTCHhIPqILQCDvtF2iTyHrsQ7uY_WBqO5LyQ-mjfgEmWxVaEqStv1B5ofPCpxWTsN6QrYUFKY1UB-6l9gu16FOWOY6wp4N8HfP4O5XkMpZVwL995ijtOtWMLR2EDprkVCp2VwNo7ZTCVOETmzXu__nL99cHnOGDNRo0mMy814rOitGSA3IQ2xqJHVcz6YBTGdJqRWJ9koJOphFd9wfjXXdyJkHgFNKGCm3PIAmcAjl6GE1pNFqUwqxxw-eOr4fDiQMnURk54BHfTlEq5pbAEVcxUA8TK4QhP_-KRBO-iUVsgPMnZBgQM8slT0r0XyJsucj5NbLN-BjYOUSy4iPaJHKaj5ArqLmcHLX9DFUlnWHZ3Xf8doZZKzf-xEipdb_a73xPd08ACW_ZGZV9owss-2ww0ea_snmIdVNn5gTLS9sTGnMD3qWnk",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"current_password\": \"654321\",\r\n    \"new_password\": \"123456\",\r\n    \"confirm_password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/change_password",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"change_password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Address",
+					"item": [
+						{
+							"name": "Location",
+							"item": [
+								{
+									"name": "getCountries",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/countries",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"countries"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getGovrnorates",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/governorates/65",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"governorates",
+												"65"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getCities",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/cities/3223",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"cities",
+												"3223"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "list-address",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDU2YmFlYWEzMmM4MjUzNzE1ZjVmODUzYjJjN2UxYjQxYzU3NzEyNDA1NzkzMmI1NWQ0OTk2N2FlZGU0ODM3ODNkYTRjNGY1NTZhYzFlZjYiLCJpYXQiOjE3MDg5NjYyMjkuODI0MzM3LCJuYmYiOjE3MDg5NjYyMjkuODI0MzM5LCJleHAiOjE3NDA1ODg2MjkuODE4MzY5LCJzdWIiOiI2ODQiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.HJFeAQYguDO8e3aYU6MxkmVva01O8Kbi7m5Ue1PfqVDaspXR_A07BTvRhdBKokz1-jr8fbJppN92RwQDEB9VtSMoSuU24bAWZ8RlrIeIm3TJZDC7f6j_UnTFrAvL-NMYjokdsIb0rA3hSM7qPMYsXf8FzpegrlhxOLcYhPKswl3H8GltnaCtqYBvpDZTyIjTD1jHANe6b0JFNNsrz2YWhh80ktzIDQE1fafVxQ98xKYM83n61AN7C-tRCcz_LZHGR1R7r5RYsDa7ULQ9hlSu2DBvT7oyRLx8fgeDO-NInQZ1-r9qYPI8sT1Ex-3Ihx4vKFF3OZoeu7juMefqt0GSmBAKUmC7qoksh4bwJTY0SYe4I76AUQ3ei7FzB2WqdnIQwabqfLyB7NJOUmtU95fLSHM4fBMRNTdhx6IdEvb1ovjmkFugw_GyaWfBUCvUtMmO2wHHfyNHeMf7bdd9hYlG1bSimtYmwwKDzomy9medNkxKR1_gG7zGPvP5Dv-f4iJHMAi4vMR_1YPOMaDLicTApFHy05X31-EjNpm9Tl7Z9wtN7Upis1MhY8Ij810UlYH72uzVbti0Y_vMNZbOjM_e5M1P5e-rv_AZunLg_1ryHrJma8MkNJffuk6B0JK9ELs6ddPS0OpTA-j85c99m2RJIWkdtimdLrpK8IsZP3N2x_o",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/customer_address_book",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"customer_address_book"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add-address",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTM2NWZjMzA1ZmI3YjJiMzZkZmYwM2ZmNmIyNGRkYmIyOGZkNGVmOTA0NTY2MDE0NGI3ZWZjOTUwMzM0OThkOTM2ZmJmNGQ4ZWE0MmU5YzUiLCJpYXQiOjE3NTkwNjk2NDQuMzM3MjczLCJuYmYiOjE3NTkwNjk2NDQuMzM3Mjc3LCJleHAiOjE3OTA2MDU2NDQuMzMxOTk0LCJzdWIiOiIxMDQ5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.bVRnuBoi7vygMmcOWtNHS0GNHDJLKewvnNGDkWJvgwP3yEp8ES20cacO3pYwR4gvAQPoerJNVa4fSMScu48dlmuN7jian57UUUUTAIw14q8R5CEaN9yclWqPs9BvjcWJ710lPjDeN66hewmtYLLjtAkoAkQ784rsPEjeY90JHVM9P2C5vAcvBaRGr2YrN4AT3cpp3XwNs3MefPCF7z1kqOTOKUQrW2DPgHqlLwOxkf9Zsj5I2ZOagvDyzh3YmCWVsL14-86k6vfNSQ7S8hkRgGYKWkbcBh5nRTxMRvgawmD_Xjs9Qp6nBHPt_jQtoq39avzsF__fD9AN_ZAF9hOuRdt4px_1o_tIAXk56V7P2NhIlCAhV43WvU6ie5vApCPd4wmJPp0chPM1PJ7jrfeh9AGzYV0GD3m-1sBTqE8yMN5bHA4qxS-KGEAvICuNScKU-HBOLQGQOwxe1nGCPvnllooEUTESD_SX6ojYYWt4oeKQJETHiRTir9sqgL89-XsYTqs8EzVwtrnGO61SYUYxZnn2FeJQhKlIAWI-a8AGUWazUxBi703KKSXzFymPVzebu1mwfnx30B7nZ8YdpmmJZVALUif4jx48op1zuV-HZa66VmqXs5UnvY6Bz4pO6FSKbeT3B7KyYEAbvHNJ8KHB2a7ZL71Vup293Jgoi2tqhCI",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"street_address\": \"El Nasr Street.,\",\r\n    \"suburb\": \"test suburb\",\r\n    \"city\": \"31802\", // city id\r\n    \"country_id\": 65, // country id\r\n    \"phone\":\"01234567890\",\r\n    \"building_number\": \"10\",\r\n    \"floor_number\": \"7\",\r\n    \"flat_number\": \"703\",\r\n    \"state_id\": \"3223\", // governorate id\r\n    \"city_id\": \"31802\" // city id\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/customer_address_book",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"customer_address_book"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update-address/{address_id}",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmI4MWJlNzdhNmJkNzY1NDAxYTFkNGUyNjk3N2E2ZGU3ZjdjZjU3Y2MzODBlZWRhMWU2ZTNiYzYzZTYwMzlmMGU3YTFmMjYxOGEyZjdlN2EiLCJpYXQiOjE2NjcyMDgwMDMuMzA5OTI1LCJuYmYiOjE2NjcyMDgwMDMuMzA5OTQsImV4cCI6MTY5ODc0NDAwMy4yOTk5MzcsInN1YiI6IjQiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.u7gIrxmb6Y16SFtYI0aQMIMLcY6h2-0GgrY_6WD7YH1ZHJe4lawtdvxq6_PX_8bQ-DeJqm71dZtto-1jnStV9qf8rlLWyq-mJuuRkDnh5gG8T5Ox0jMgICu-LCg_JQkxvsJ9et6fH6Am8A-K75Il4Tc6fawYVWQpNpcw9LQ6wpdtTxmqW7i5FuhzMEAqFFm9G3aFAxILV2iegs4jYkuT_v5u7SPMKtm6GzBjsi4S2-E7Kn_nEtGu-30V6-bzupgl_W7deuvs_-aoz2EHRD_DmaY5ci7lBH0vMBRBbzhmOjflwNykUhOGc5bixF3UAxfTWRwrjpwJNrQMYbh3YXLkN5nOQ0EY_KvOouTnJn3bsed9yK6gRpaJj4gbsK8eGbOglvS2zxb2jRt8ucgi1S1lQPvnK2zmIPk5YByo2KkBPd--Hs8fk-r_Y5gf0s-Ntar8iX5jVMx16zgPVIFijNW340SPrjux1PeVMSD1v_C_yhaZn4VakH5lfascQSvQ8vWjRv4BmRTV1uhG8Pl-g2wnug_Aqzb8Wp9ZBYVRReVdieu5_Xra6gNrxTa9w7bhxdyCvRNUynVcWkidfJ6u5NukCv9X8D57BuhhjgveDf7S1pw4NZ5pbksC7n_4tDFBbqmlAHF5SVLA5B50kzhBV50zMROJOnt0vE2vfKzzp9FbXUI",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gender\": \"Male\",\r\n    \"first_name\": \"Mohammad\",\r\n    \"last_name\": \"Essam\",\r\n    \"is_default\": 1,\r\n    \"company\": \"Company\",\r\n    \"street_address\": \"El Nasr St,\",\r\n    \"suburb\": \"Madenit Nasr\",\r\n    \"postcode\": \"12345\",\r\n    \"dob\": \"1995-09-10\",\r\n    \"city\": \"Cairo\",\r\n    \"country_id\": 65,\r\n    \"state_id\": 3223,\r\n    \"phone\":\"01234567890\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/customer_address_book/3",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"customer_address_book",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-address/{address_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmI4MWJlNzdhNmJkNzY1NDAxYTFkNGUyNjk3N2E2ZGU3ZjdjZjU3Y2MzODBlZWRhMWU2ZTNiYzYzZTYwMzlmMGU3YTFmMjYxOGEyZjdlN2EiLCJpYXQiOjE2NjcyMDgwMDMuMzA5OTI1LCJuYmYiOjE2NjcyMDgwMDMuMzA5OTQsImV4cCI6MTY5ODc0NDAwMy4yOTk5MzcsInN1YiI6IjQiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.u7gIrxmb6Y16SFtYI0aQMIMLcY6h2-0GgrY_6WD7YH1ZHJe4lawtdvxq6_PX_8bQ-DeJqm71dZtto-1jnStV9qf8rlLWyq-mJuuRkDnh5gG8T5Ox0jMgICu-LCg_JQkxvsJ9et6fH6Am8A-K75Il4Tc6fawYVWQpNpcw9LQ6wpdtTxmqW7i5FuhzMEAqFFm9G3aFAxILV2iegs4jYkuT_v5u7SPMKtm6GzBjsi4S2-E7Kn_nEtGu-30V6-bzupgl_W7deuvs_-aoz2EHRD_DmaY5ci7lBH0vMBRBbzhmOjflwNykUhOGc5bixF3UAxfTWRwrjpwJNrQMYbh3YXLkN5nOQ0EY_KvOouTnJn3bsed9yK6gRpaJj4gbsK8eGbOglvS2zxb2jRt8ucgi1S1lQPvnK2zmIPk5YByo2KkBPd--Hs8fk-r_Y5gf0s-Ntar8iX5jVMx16zgPVIFijNW340SPrjux1PeVMSD1v_C_yhaZn4VakH5lfascQSvQ8vWjRv4BmRTV1uhG8Pl-g2wnug_Aqzb8Wp9ZBYVRReVdieu5_Xra6gNrxTa9w7bhxdyCvRNUynVcWkidfJ6u5NukCv9X8D57BuhhjgveDf7S1pw4NZ5pbksC7n_4tDFBbqmlAHF5SVLA5B50kzhBV50zMROJOnt0vE2vfKzzp9FbXUI",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/customer_address_book/3",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"customer_address_book",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "General",
+					"item": [
+						{
+							"name": "isDefaultShipping",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/isDefaultShipping",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"isDefaultShipping"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getTaxRateByState",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/tax_rate/?state_id=3223",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"tax_rate",
+										""
+									],
+									"query": [
+										{
+											"key": "state_id",
+											"value": "3223"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "points",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/points",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"points"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "membership",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/customer/membership",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"customer",
+										"membership"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "redeem",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/redeem",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"redeem"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLanguages",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTZhMTU5YzNjMjNkMDdiNWQwMWJlODcyZDQ2ZmU3MTljYjZjMjk3MzRlY2I0MzI1OWFmMjFjNmUzYTcwN2Y5NjQwZjk0MTA2ZWRiNTc0ZTciLCJpYXQiOjE2NjcyODczMjkuNjc4OTY2LCJuYmYiOjE2NjcyODczMjkuNjc4OTcxLCJleHAiOjE2OTg4MjMzMjkuNjc0NTU1LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.rBB-SIU7jbAno_KYVGkllkJcvuk5NvLjwTi6Z6UsYn7r0-qrnmRw8VmTVOqpqhe6ac3ZGiKnkVWdwTDAEEzCUpgZ4ZHK-R67uYdoDqs2h1YExsJKcZ-2YSA385aqfEXLxRerogQTG_WPu-6kIXIO00dietAJkNkWtnTnlLqa2exmJ6esHXFajurFsqAUDnWQUG-8Eig3ThoE3B9WwBMbJ7uzY4yKmQJNSpan5wzrZ4L_lecUmVLHR28a91OACP5TTRv25DRO_PfVZvevVQqJJGBlI3ONKLyu9L6150OaFYPLaxPl56VQBM7PWFfHpraAXB9ucvQ9z0J-lRTHJTxKegIGf_5U5b2DXRyqhQsQl0lvtZ7nmyr-_J1wd20mrRB7fzFAiv0aCC8G5Z1LhDRhOn2mVSdo7ut-naIzxaPFDVO2WyugpF0YgzqeupdWUkAOrgy8Msnl414yUsCzdEDDiKEfnXqPtfWv6x7BUwME0cvSGe518B6zmxfuOBPX6fY_b7ddlEjR1WUhks3bRvP0yeYrdRzcn3bEQdaySbhVnsETw4-egZY66MIqK0ZXDC-O3MDCXcgiJDf6HyXHE7xKep-3PzGYJzLxrvGnve3Y3MiSex1-SZyQJWtQ0QZ2wNQBsimGRoKGCBf-EiU5Gd4EsO9fBWNBIZQVaJFcpk_zuFU",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/languages",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"languages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mainSlider",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/mainslides",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"mainslides"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Wishlist",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/wishlist",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"wishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addToWishList",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\":2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/wishlist",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"wishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteFromWishlist",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/wishlist/2",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"wishlist",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Compare",
+					"item": [
+						{
+							"name": "compare",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/compare",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"compare"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addToCompare",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\":2,\r\n    \"customer_id\":4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/compare",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"compare"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteFromCompare",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/compare/3",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"compare",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "addToCart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDU2YmFlYWEzMmM4MjUzNzE1ZjVmODUzYjJjN2UxYjQxYzU3NzEyNDA1NzkzMmI1NWQ0OTk2N2FlZGU0ODM3ODNkYTRjNGY1NTZhYzFlZjYiLCJpYXQiOjE3MDg5NjYyMjkuODI0MzM3LCJuYmYiOjE3MDg5NjYyMjkuODI0MzM5LCJleHAiOjE3NDA1ODg2MjkuODE4MzY5LCJzdWIiOiI2ODQiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.HJFeAQYguDO8e3aYU6MxkmVva01O8Kbi7m5Ue1PfqVDaspXR_A07BTvRhdBKokz1-jr8fbJppN92RwQDEB9VtSMoSuU24bAWZ8RlrIeIm3TJZDC7f6j_UnTFrAvL-NMYjokdsIb0rA3hSM7qPMYsXf8FzpegrlhxOLcYhPKswl3H8GltnaCtqYBvpDZTyIjTD1jHANe6b0JFNNsrz2YWhh80ktzIDQE1fafVxQ98xKYM83n61AN7C-tRCcz_LZHGR1R7r5RYsDa7ULQ9hlSu2DBvT7oyRLx8fgeDO-NInQZ1-r9qYPI8sT1Ex-3Ihx4vKFF3OZoeu7juMefqt0GSmBAKUmC7qoksh4bwJTY0SYe4I76AUQ3ei7FzB2WqdnIQwabqfLyB7NJOUmtU95fLSHM4fBMRNTdhx6IdEvb1ovjmkFugw_GyaWfBUCvUtMmO2wHHfyNHeMf7bdd9hYlG1bSimtYmwwKDzomy9medNkxKR1_gG7zGPvP5Dv-f4iJHMAi4vMR_1YPOMaDLicTApFHy05X31-EjNpm9Tl7Z9wtN7Upis1MhY8Ij810UlYH72uzVbti0Y_vMNZbOjM_e5M1P5e-rv_AZunLg_1ryHrJma8MkNJffuk6B0JK9ELs6ddPS0OpTA-j85c99m2RJIWkdtimdLrpK8IsZP3N2x_o",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\": 766,\r\n    \"qty\": 1,\r\n    \"is_collage\": 0,\r\n    \"is_offer\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/cart",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCart",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTlhZGIxNmI2MzBiYzYxMTU3YTBhYmVkNjhiNWY1MTU1ODU4ZGI1MjQ5MWI3OTViMzZlMDczZGJiMGZmZTJiYTYyZjVlOWI0NDk5ZDFiMDMiLCJpYXQiOjE2NzA3NTQyNzIuNjUyNTgxLCJuYmYiOjE2NzA3NTQyNzIuNjUyNTg0LCJleHAiOjE3MDIyOTAyNzIuNjUxMDgxLCJzdWIiOiI0NCIsInNjb3BlcyI6WyJjdXN0b21lciJdfQ.r_OKJFJ6ZZHXg_5rEnCdKVD_qK_dIivH91XSBRSZZ3zkqa-l0Xwg9wpN61nqMQ-uQXWENkBzpVZs0nL9CDbaaPLmJsM6RCLd6XYT-5IS1soRO15QFHmaTjnfN86pjmcLndP_CS6NgjaEgYay81I9tfOL8eHo7bAUX2pIjk9Ee9FplY-oscnRQriGXilhWUMUtsX0NoZum1L4xE-RkgXqvYgyxidISYa0LyF8nLCb-8MvZloPGiqO43iuQMBQj-eWhpArXjY7XhXEOFOApiNnFd6_FTIVm7MkhAVvzMIDb3EWcj4ZkzncY67ndOliXFv5oLgk2l3CGiybgpaZ8AjluKHntnCgiyad1Esdnyp6BNVdm1RCmhMnusP6TDmUMpGSSpYa6uqkSAdocPLJbQ63a3py0OR8twd5Vh8SefVjFqAhg3Ng7k-LqXcl8fUOsDNzEIKtJxOJlIqs3sYHHS0yYXns91WQDonhItLG70KSO4kUbNicvbkfA5b9_FPo2PrIXnFzZ6WeDya2bTTfkWudrQ99ZPLURkzGrpgKScmFEvvRwRDxoh_0XtcKMdOuxBxN0DL8873GO9_KWLWJLUT4CnmeiDvWEEMOQDKdXHDejqcNaRZlVI4gBoL0wn2O2gUdTYafMzDcNJDfBT6LNxDTtT8LGKdeDs2Z7CZzn2M5Gks",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPSERVER}}/client/cart/212",
+									"host": [
+										"{{SHOPSERVER}}"
+									],
+									"path": [
+										"client",
+										"cart",
+										"212"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "userCart",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzU4NDEzZTdlOTM0ODNiOWM4ZmJmOWEwZGQzYzMwN2I5OTdhMmJhOWU1ZGIxM2ZmNDVjMDcxMjk3NmJlNzQwNTUzN2NiNDNkZGUxMTc2YjAiLCJpYXQiOjE2NzE2OTU2ODMuODk2MDU5LCJuYmYiOjE2NzE2OTU2ODMuODk2MDY5LCJleHAiOjE3MDMyMzE2ODMuODExMjYyLCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.Sz92hka9aW-mCrNEPQnULn0ybX_cdN3dHzcvCLB0dRnqG834WDbFYTZ0YOuY-yrt-Q4vw4c6pDLjLf1hr5HWVHaFQzjEW0AhJ3LJ2RZwfll7HwyImMYGXibsgLEJYaa-cKTc2hQZAe7325mRnVkGgyRI3NLCJIjWLY3UtUE3cmI3qtev7163VOsuFgKMyu6LA8aLNff6X4ziIvKTROYI4xg6A4Z0Hc-xAr9xeADPFHRUVmz--DAjNXm14pSYTx3icWJz9ToB0syZWwu2VYgRv62qUmj-K8oImBNFMmf0CP3LFBjGykE4qtCz8oKqmjRk18y0htlXaYS_yQWZ6rcrS3xLLh8EFrqesaS1jSg2Ef4vZOhZlypt4-6-OVoU-Xso6Rbo-fVuTCLl0CEGsTtLbON0O3zZahVMHXhSGrhXTmfA2vXh_kBxEyDxiTRsUOQB2Vr5cN1N6HUP-FR1-KQgRuX_E7Tjd3N7XNzkG_RQKs27D8AmC7gBpM5fljlkrlfmcrUvmDxrGj5-YuDIq7Mjd1CPtJoQ7ze6LZa2iFQyby12nz41EbcF-p1zJNHuartDuTGe27aOvEq2ETR2ErrByUL_VujbQTNT4BxgFt_6-aXMwoglHO2o7gc6Cj4UOcSWVm37v4RbOMDEvjL6MtZhLuN2ACZLJNUxAxYuDikVEkg",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/usercart",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"usercart"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "addOrder",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDU2YmFlYWEzMmM4MjUzNzE1ZjVmODUzYjJjN2UxYjQxYzU3NzEyNDA1NzkzMmI1NWQ0OTk2N2FlZGU0ODM3ODNkYTRjNGY1NTZhYzFlZjYiLCJpYXQiOjE3MDg5NjYyMjkuODI0MzM3LCJuYmYiOjE3MDg5NjYyMjkuODI0MzM5LCJleHAiOjE3NDA1ODg2MjkuODE4MzY5LCJzdWIiOiI2ODQiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.HJFeAQYguDO8e3aYU6MxkmVva01O8Kbi7m5Ue1PfqVDaspXR_A07BTvRhdBKokz1-jr8fbJppN92RwQDEB9VtSMoSuU24bAWZ8RlrIeIm3TJZDC7f6j_UnTFrAvL-NMYjokdsIb0rA3hSM7qPMYsXf8FzpegrlhxOLcYhPKswl3H8GltnaCtqYBvpDZTyIjTD1jHANe6b0JFNNsrz2YWhh80ktzIDQE1fafVxQ98xKYM83n61AN7C-tRCcz_LZHGR1R7r5RYsDa7ULQ9hlSu2DBvT7oyRLx8fgeDO-NInQZ1-r9qYPI8sT1Ex-3Ihx4vKFF3OZoeu7juMefqt0GSmBAKUmC7qoksh4bwJTY0SYe4I76AUQ3ei7FzB2WqdnIQwabqfLyB7NJOUmtU95fLSHM4fBMRNTdhx6IdEvb1ovjmkFugw_GyaWfBUCvUtMmO2wHHfyNHeMf7bdd9hYlG1bSimtYmwwKDzomy9medNkxKR1_gG7zGPvP5Dv-f4iJHMAi4vMR_1YPOMaDLicTApFHy05X31-EjNpm9Tl7Z9wtN7Upis1MhY8Ij810UlYH72uzVbti0Y_vMNZbOjM_e5M1P5e-rv_AZunLg_1ryHrJma8MkNJffuk6B0JK9ELs6ddPS0OpTA-j85c99m2RJIWkdtimdLrpK8IsZP3N2x_o",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currency_id\" : \"1\",\r\n    \"payment_method\" : \"paymob\",\r\n    \"delivery_address_id\": 55\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/order",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list-orders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/customer/order",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"customer",
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "viewOrder",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTcxZmQ1Mjc3ZWE2ZGU5OThlMzhhYmVjNjVlNTkyOGIwYzUyNmJjZjZkODVhNWJjMGQ5MzJkZGY0ZmUyNzgyMmI4MDBhN2E2ZTdmMGIyNzgiLCJpYXQiOjE2Njg0MDk4NzYuNzg3NzY2LCJuYmYiOjE2Njg0MDk4NzYuNzg3NzY5LCJleHAiOjE2OTk5NDU4NzYuNzY5Mjg5LCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.F-BA-0jo5JcM-H3CmvEuJroV71RY6RkCzhqeTk21LWZpMDZHIFSh9Y-Vbw7rWO3aHkiDXVOf3yhRRhJV7_tmOEYftWUQuzyN9Zi7xhngY7jLPnKmVGQevbmizzN8kHSMajlXMEogqkHSuDrhdOITXHLJ-uiV8ArbpTMafSoPG4oU9_RRiRkVfzfni4Q4CnV98vHvsI79OYS3bYS8WvGDxa4n3nMQ4U7YhvUD-tPYGoZOVXaQBAs_c0lrTrrM-ZyPNfENyKTuiMTFlG0E5evbOVAl6XNdn6n7EFJkFTNdbmHE7HGn4MZUF9_BT1jZnqk71Bsetb1ekATz0XA2KT12vxA0MAtDq3tG48rVxEnIITZQCQ5L0PF3UpQN_Gm5mmDZRtwAKxLr4FKeRTanOId1FjG2BzQsVf9obn7xob_4S9ptKfBUpysio_KTItLNrDQUX2iopZsnLLS6D52medwNj6i7mx9ZXB_W51ePSoHSj-HbmwsO7Q0U11mdQxnO5D1hialpfXGws5354NZRRntmJ2Msy_oCW0DlDG3PD-gkbmj79uLOJOoqDVBwfwUbze4kyvTZ-gOi90J5L__tbj07fFfcjC9SNw9_4fW6g1khydOtjKrDLudMFyCLB_Bzmw2lxRtE_EXucrFi7OxgJJoCM-c55wjmONRn4dmsg-Rpx-k",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"qty\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/customer/order/6",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"customer",
+										"order",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addComment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"comment\": \"Please deliver after 6p.m\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/add_comments/",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"add_comments",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getUserOrders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTljODQ5OGUxODQxMzMzM2U4ZTU3MmNiOGU3MmFmYWU5YzBmNmFiYmUzYmU3NDg0NzkxMzQ1NWUxNWE1ZGJhOTYyYjUyZmYyYmM2MTZhMWMiLCJpYXQiOjE2Njg2NzIxODEuNDkxNjk0LCJuYmYiOjE2Njg2NzIxODEuNDkxNzA3LCJleHAiOjE3MDAyMDgxODEuNDgwNDgxLCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.kkd6LHqBy6u16f76-HROTQzgml_GGbYYBVH9eb3db19ofUG5s1Qiq9edUstcm1HLz-wN3DPohpt4_PQdJT1r589mvYG7n3AJuCzaJbo4jEnKGH7hnoDL2pM7Yyy0G5BBtmaBIahmooKvowfiOFfe9mlvioskPdKdoJkNYcA5WikVXWmzZrjSn_fpKP9S9JEUbFWE-GYtzN2fo8FxGnuvdLHxwuXzkEmYZQPDxuhOFP7itPpyIHqkNpKNFZaFkpEsq0DRlqXDjNbJjNK4Xq_cj98x9FBoIzBe-_VAmrv3GCioTBYxLOucCr12xfymZ_cUOU9DfH9JQTimaR87MiKyNaskRLycu3wWc2t7KV9qaYCufTMc_Uofc9GY1dlTspzwqm4sk34UDziYG3VDcCUVdqz5h9uPmhOCgDRY-TLD9V7d9XfN-2tv__rYi8QuCoXtm10_hFHQ465BC79qnGzkBM7ENE4UWJiEHWdoLdZipwmRKxDcnfBGRUPLR0daFW5WlTY0c3Qm-MYSyGgJQ3r1L7WIprpN3PpSpbE45VIj0VtcZspCtjl2bgUrhKDGNvp7oVh3YXqoM06qNx8jVurgUXNYQboC8L-_sJSgtkiKkXrGX7IxNIYnKc38s8MNS0fUqREyhv1p5ZXrQeRYmbstl9xrQM8l79KkIoCgowQ1C9Y",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/orders",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "singleOrder",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTcxZmQ1Mjc3ZWE2ZGU5OThlMzhhYmVjNjVlNTkyOGIwYzUyNmJjZjZkODVhNWJjMGQ5MzJkZGY0ZmUyNzgyMmI4MDBhN2E2ZTdmMGIyNzgiLCJpYXQiOjE2Njg0MDk4NzYuNzg3NzY2LCJuYmYiOjE2Njg0MDk4NzYuNzg3NzY5LCJleHAiOjE2OTk5NDU4NzYuNzY5Mjg5LCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.F-BA-0jo5JcM-H3CmvEuJroV71RY6RkCzhqeTk21LWZpMDZHIFSh9Y-Vbw7rWO3aHkiDXVOf3yhRRhJV7_tmOEYftWUQuzyN9Zi7xhngY7jLPnKmVGQevbmizzN8kHSMajlXMEogqkHSuDrhdOITXHLJ-uiV8ArbpTMafSoPG4oU9_RRiRkVfzfni4Q4CnV98vHvsI79OYS3bYS8WvGDxa4n3nMQ4U7YhvUD-tPYGoZOVXaQBAs_c0lrTrrM-ZyPNfENyKTuiMTFlG0E5evbOVAl6XNdn6n7EFJkFTNdbmHE7HGn4MZUF9_BT1jZnqk71Bsetb1ekATz0XA2KT12vxA0MAtDq3tG48rVxEnIITZQCQ5L0PF3UpQN_Gm5mmDZRtwAKxLr4FKeRTanOId1FjG2BzQsVf9obn7xob_4S9ptKfBUpysio_KTItLNrDQUX2iopZsnLLS6D52medwNj6i7mx9ZXB_W51ePSoHSj-HbmwsO7Q0U11mdQxnO5D1hialpfXGws5354NZRRntmJ2Msy_oCW0DlDG3PD-gkbmj79uLOJOoqDVBwfwUbze4kyvTZ-gOi90J5L__tbj07fFfcjC9SNw9_4fW6g1khydOtjKrDLudMFyCLB_Bzmw2lxRtE_EXucrFi7OxgJJoCM-c55wjmONRn4dmsg-Rpx-k",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/vieworder/25",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"vieworder",
+										"25"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Coupon",
+					"item": [
+						{
+							"name": "verify",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"coupon_code\": \"123TESTCOUPON\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/coupon",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"coupon"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Reviews",
+					"item": [
+						{
+							"name": "addReview",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\":3,\r\n    \"title\":\"Amazing product\",\r\n    \"comment\" : \"Product is great, qualty is superior and packaging is amazing.\",\r\n    \"rating\":4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/review",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"review"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "addComment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDM2N2Q2NDA0MmY1ZWFmODAxMmI4MzE5ZjQwZDBhNmQ5YmQ2ZjY2NTQxN2Q0OTE3N2JiYTI2Y2Y3NDhhY2RlMDQ0YTUyYjM1ODVjZDg2MGMiLCJpYXQiOjE2NjcyMTMwNjIuNDk2NTg5LCJuYmYiOjE2NjcyMTMwNjIuNDk2NjAyLCJleHAiOjE2OTg3NDkwNjIuNDg5ODc0LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.ppqJzlGMjdEXDaRgOyWwQTqVPJDeppdvVAZPYeN3WIPAJ-e6ujHbXQDRwhEJXbt9dIUPgOUqKICxUZryHoEwFmimpvODDk_Y9_YldgZ64OfqDAd1lnHiwb1iIknCbiHy40-h_DN-ZPLKC9Cnp0InABMo3ie_EaUXaKgE7Z-3a1q4xi3laRD0cQbWI5bNN3UiGqGri4NCGwcOMw5h-t8AHgHiuzh678F7De-AwopWTyOR6VdZ-luzqD2AVTmIqKmAiqo66tr3fyxXwFvfnE35mpmRErEMAMZjpexD7oj4GONQ1ku8rfRmwCNB9AzMi-CLYnmY8ZwyoZCgsk4ADlNGgrQGPAIZhy8eVkJo_oU3f_qYrmKX1xVa6yt0inNBKPY2SKyWpwFFpPpIruq1wgV3KAM5qXqV9JsYG3HZuWxbtYIdUJLKfH11YfShgyVOIaO2i0gin2BH6LY1kRcsP9iyUd6ic5ZvGFiL7v3miY-BwlBoozWhr7QV5z3PMh20igyHXvs-eSgxT5i0KiG_WwZeNTpUrgEV-KhIE6k-iHNVclaNRyqAaZSBQ_MQ0rF4VJNaUbRShb7TEoeiuSw7kFzy_0qp7okmf1UcBuNZDwqoDbuzRMGITV8u2A_gr5B58oklxruEecs2euibo7Lh88IhQVE1iPxxo47Skxq5xwD-GME",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\": 2,\r\n    \"comment\": \"Amazing Product\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/comment",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"comment"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Catalog",
+					"item": [
+						{
+							"name": "Category",
+							"item": [
+								{
+									"name": "Top Categories",
+									"item": [
+										{
+											"name": "TopCategroies",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTZhMTU5YzNjMjNkMDdiNWQwMWJlODcyZDQ2ZmU3MTljYjZjMjk3MzRlY2I0MzI1OWFmMjFjNmUzYTcwN2Y5NjQwZjk0MTA2ZWRiNTc0ZTciLCJpYXQiOjE2NjcyODczMjkuNjc4OTY2LCJuYmYiOjE2NjcyODczMjkuNjc4OTcxLCJleHAiOjE2OTg4MjMzMjkuNjc0NTU1LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.rBB-SIU7jbAno_KYVGkllkJcvuk5NvLjwTi6Z6UsYn7r0-qrnmRw8VmTVOqpqhe6ac3ZGiKnkVWdwTDAEEzCUpgZ4ZHK-R67uYdoDqs2h1YExsJKcZ-2YSA385aqfEXLxRerogQTG_WPu-6kIXIO00dietAJkNkWtnTnlLqa2exmJ6esHXFajurFsqAUDnWQUG-8Eig3ThoE3B9WwBMbJ7uzY4yKmQJNSpan5wzrZ4L_lecUmVLHR28a91OACP5TTRv25DRO_PfVZvevVQqJJGBlI3ONKLyu9L6150OaFYPLaxPl56VQBM7PWFfHpraAXB9ucvQ9z0J-lRTHJTxKegIGf_5U5b2DXRyqhQsQl0lvtZ7nmyr-_J1wd20mrRB7fzFAiv0aCC8G5Z1LhDRhOn2mVSdo7ut-naIzxaPFDVO2WyugpF0YgzqeupdWUkAOrgy8Msnl414yUsCzdEDDiKEfnXqPtfWv6x7BUwME0cvSGe518B6zmxfuOBPX6fY_b7ddlEjR1WUhks3bRvP0yeYrdRzcn3bEQdaySbhVnsETw4-egZY66MIqK0ZXDC-O3MDCXcgiJDf6HyXHE7xKep-3PzGYJzLxrvGnve3Y3MiSex1-SZyQJWtQ0QZ2wNQBsimGRoKGCBf-EiU5Gd4EsO9fBWNBIZQVaJFcpk_zuFU",
+														"type": "default"
+													}
+												],
+												"url": {
+													"raw": "{{SHOPLOCAL}}/top-categories",
+													"host": [
+														"{{SHOPLOCAL}}"
+													],
+													"path": [
+														"top-categories"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "listCategories/{asc, desc, ztoa, atoz}",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWEwODg4YWFhYjFlMGMzY2E3NGZhNjhjZDMxN2QwYzZmMzRiMDUyMGQxZWVkNzllMmQ3MzJhNGJjOTFjYjQ0NjVmNjE0OTNlZTI3OTc5YjkiLCJpYXQiOjE2NjcxMjcyMTUuMjc0NjE4LCJuYmYiOjE2NjcxMjcyMTUuMjc0NjIsImV4cCI6MTY5ODY2MzIxNS4yNzMzODMsInN1YiI6IjQiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.sZuB47A689HjbzdCh4ehIyOGcFJuAWPHQ0D4QSasPhb8XbkXikVrf4K-Bul5bp7IxGwDzOWLFa0z-hv_3HovBq6r74RsRMM-mUOAJxpd4zTNwu6gY9E8z7BEScIcSvPkAbwOMRAfBj1NUVz122KvuATUJof4X3sIdGyS2o1yoSEW9plRgcEoxapI-Mt2wyHCoi51NBUaMK_9uYCMAtAjoJuuYeIEKXL0QJRxWgNDJQ2V6e8eVFt9mWFCgVdcQAwqj6imSN_jy_4C70edtYsFK2ELH_0K_Gs343xOteOvZOIvnN76QcYv9pT49hgtB9jvdi1O4yZWvyRThxM_OZfVAGkCapUxTzylIRCc2mraav6p3gmbxAAbxFymlC_Mr9PrPYYYh4fiA45ShXCvkC2FXr98qlXdDflsowZ1-l3hDJ_BLLSA3CrDzSG_1-vSYxxDFlNeGMC_n1I6EetaQ9F-h1gdS1O4I2c08aMilcG4rdzPc9RuewRqFTWQJgg9U2-C60idW0clCwH1Rs6hEcM1aOg6SgVnsFhV1it1QkdqGrXLfdA5gWdsozjehAuk9BQXB9goHc4gK2VxUSUAIbWpoebxchbiaI8cGQm2hx9uAsdAQwqM0tkLWa8b9AyL4ffQL8vAvmFxQM_n6klNjdGoFdQuvNpX2T-1dNt0WNP3Mtg",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/categories/asc",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"categories",
+												"asc"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getThirdLevelWithId",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/leveled-categories/2",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"leveled-categories",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Products",
+							"item": [
+								{
+									"name": "listProducts/{$page}/{$limit}",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWEwODg4YWFhYjFlMGMzY2E3NGZhNjhjZDMxN2QwYzZmMzRiMDUyMGQxZWVkNzllMmQ3MzJhNGJjOTFjYjQ0NjVmNjE0OTNlZTI3OTc5YjkiLCJpYXQiOjE2NjcxMjcyMTUuMjc0NjE4LCJuYmYiOjE2NjcxMjcyMTUuMjc0NjIsImV4cCI6MTY5ODY2MzIxNS4yNzMzODMsInN1YiI6IjQiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.sZuB47A689HjbzdCh4ehIyOGcFJuAWPHQ0D4QSasPhb8XbkXikVrf4K-Bul5bp7IxGwDzOWLFa0z-hv_3HovBq6r74RsRMM-mUOAJxpd4zTNwu6gY9E8z7BEScIcSvPkAbwOMRAfBj1NUVz122KvuATUJof4X3sIdGyS2o1yoSEW9plRgcEoxapI-Mt2wyHCoi51NBUaMK_9uYCMAtAjoJuuYeIEKXL0QJRxWgNDJQ2V6e8eVFt9mWFCgVdcQAwqj6imSN_jy_4C70edtYsFK2ELH_0K_Gs343xOteOvZOIvnN76QcYv9pT49hgtB9jvdi1O4yZWvyRThxM_OZfVAGkCapUxTzylIRCc2mraav6p3gmbxAAbxFymlC_Mr9PrPYYYh4fiA45ShXCvkC2FXr98qlXdDflsowZ1-l3hDJ_BLLSA3CrDzSG_1-vSYxxDFlNeGMC_n1I6EetaQ9F-h1gdS1O4I2c08aMilcG4rdzPc9RuewRqFTWQJgg9U2-C60idW0clCwH1Rs6hEcM1aOg6SgVnsFhV1it1QkdqGrXLfdA5gWdsozjehAuk9BQXB9goHc4gK2VxUSUAIbWpoebxchbiaI8cGQm2hx9uAsdAQwqM0tkLWa8b9AyL4ffQL8vAvmFxQM_n6klNjdGoFdQuvNpX2T-1dNt0WNP3Mtg",
+												"type": "default",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/products/2",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"products",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "singleProduct/{product_id}",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWEwODg4YWFhYjFlMGMzY2E3NGZhNjhjZDMxN2QwYzZmMzRiMDUyMGQxZWVkNzllMmQ3MzJhNGJjOTFjYjQ0NjVmNjE0OTNlZTI3OTc5YjkiLCJpYXQiOjE2NjcxMjcyMTUuMjc0NjE4LCJuYmYiOjE2NjcxMjcyMTUuMjc0NjIsImV4cCI6MTY5ODY2MzIxNS4yNzMzODMsInN1YiI6IjQiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.sZuB47A689HjbzdCh4ehIyOGcFJuAWPHQ0D4QSasPhb8XbkXikVrf4K-Bul5bp7IxGwDzOWLFa0z-hv_3HovBq6r74RsRMM-mUOAJxpd4zTNwu6gY9E8z7BEScIcSvPkAbwOMRAfBj1NUVz122KvuATUJof4X3sIdGyS2o1yoSEW9plRgcEoxapI-Mt2wyHCoi51NBUaMK_9uYCMAtAjoJuuYeIEKXL0QJRxWgNDJQ2V6e8eVFt9mWFCgVdcQAwqj6imSN_jy_4C70edtYsFK2ELH_0K_Gs343xOteOvZOIvnN76QcYv9pT49hgtB9jvdi1O4yZWvyRThxM_OZfVAGkCapUxTzylIRCc2mraav6p3gmbxAAbxFymlC_Mr9PrPYYYh4fiA45ShXCvkC2FXr98qlXdDflsowZ1-l3hDJ_BLLSA3CrDzSG_1-vSYxxDFlNeGMC_n1I6EetaQ9F-h1gdS1O4I2c08aMilcG4rdzPc9RuewRqFTWQJgg9U2-C60idW0clCwH1Rs6hEcM1aOg6SgVnsFhV1it1QkdqGrXLfdA5gWdsozjehAuk9BQXB9goHc4gK2VxUSUAIbWpoebxchbiaI8cGQm2hx9uAsdAQwqM0tkLWa8b9AyL4ffQL8vAvmFxQM_n6klNjdGoFdQuvNpX2T-1dNt0WNP3Mtg",
+												"type": "default",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/single-product/756",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"single-product",
+												"756"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "singleVendorProducts",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/vendor/products/87",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"vendor",
+												"products",
+												"87"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ProductsByCategory/category_id/vendor_id/add_to_editor/page/limit",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTlhZGIxNmI2MzBiYzYxMTU3YTBhYmVkNjhiNWY1MTU1ODU4ZGI1MjQ5MWI3OTViMzZlMDczZGJiMGZmZTJiYTYyZjVlOWI0NDk5ZDFiMDMiLCJpYXQiOjE2NzA3NTQyNzIuNjUyNTgxLCJuYmYiOjE2NzA3NTQyNzIuNjUyNTg0LCJleHAiOjE3MDIyOTAyNzIuNjUxMDgxLCJzdWIiOiI0NCIsInNjb3BlcyI6WyJjdXN0b21lciJdfQ.r_OKJFJ6ZZHXg_5rEnCdKVD_qK_dIivH91XSBRSZZ3zkqa-l0Xwg9wpN61nqMQ-uQXWENkBzpVZs0nL9CDbaaPLmJsM6RCLd6XYT-5IS1soRO15QFHmaTjnfN86pjmcLndP_CS6NgjaEgYay81I9tfOL8eHo7bAUX2pIjk9Ee9FplY-oscnRQriGXilhWUMUtsX0NoZum1L4xE-RkgXqvYgyxidISYa0LyF8nLCb-8MvZloPGiqO43iuQMBQj-eWhpArXjY7XhXEOFOApiNnFd6_FTIVm7MkhAVvzMIDb3EWcj4ZkzncY67ndOliXFv5oLgk2l3CGiybgpaZ8AjluKHntnCgiyad1Esdnyp6BNVdm1RCmhMnusP6TDmUMpGSSpYa6uqkSAdocPLJbQ63a3py0OR8twd5Vh8SefVjFqAhg3Ng7k-LqXcl8fUOsDNzEIKtJxOJlIqs3sYHHS0yYXns91WQDonhItLG70KSO4kUbNicvbkfA5b9_FPo2PrIXnFzZ6WeDya2bTTfkWudrQ99ZPLURkzGrpgKScmFEvvRwRDxoh_0XtcKMdOuxBxN0DL8873GO9_KWLWJLUT4CnmeiDvWEEMOQDKdXHDejqcNaRZlVI4gBoL0wn2O2gUdTYafMzDcNJDfBT6LNxDTtT8LGKdeDs2Z7CZzn2M5Gks",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/products-by-category/23/0/0/0/100",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"products-by-category",
+												"23",
+												"0",
+												"0",
+												"0",
+												"100"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ProductsByRoom/room_id/vendor_id/add_to_editor/page/limit",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTlhZGIxNmI2MzBiYzYxMTU3YTBhYmVkNjhiNWY1MTU1ODU4ZGI1MjQ5MWI3OTViMzZlMDczZGJiMGZmZTJiYTYyZjVlOWI0NDk5ZDFiMDMiLCJpYXQiOjE2NzA3NTQyNzIuNjUyNTgxLCJuYmYiOjE2NzA3NTQyNzIuNjUyNTg0LCJleHAiOjE3MDIyOTAyNzIuNjUxMDgxLCJzdWIiOiI0NCIsInNjb3BlcyI6WyJjdXN0b21lciJdfQ.r_OKJFJ6ZZHXg_5rEnCdKVD_qK_dIivH91XSBRSZZ3zkqa-l0Xwg9wpN61nqMQ-uQXWENkBzpVZs0nL9CDbaaPLmJsM6RCLd6XYT-5IS1soRO15QFHmaTjnfN86pjmcLndP_CS6NgjaEgYay81I9tfOL8eHo7bAUX2pIjk9Ee9FplY-oscnRQriGXilhWUMUtsX0NoZum1L4xE-RkgXqvYgyxidISYa0LyF8nLCb-8MvZloPGiqO43iuQMBQj-eWhpArXjY7XhXEOFOApiNnFd6_FTIVm7MkhAVvzMIDb3EWcj4ZkzncY67ndOliXFv5oLgk2l3CGiybgpaZ8AjluKHntnCgiyad1Esdnyp6BNVdm1RCmhMnusP6TDmUMpGSSpYa6uqkSAdocPLJbQ63a3py0OR8twd5Vh8SefVjFqAhg3Ng7k-LqXcl8fUOsDNzEIKtJxOJlIqs3sYHHS0yYXns91WQDonhItLG70KSO4kUbNicvbkfA5b9_FPo2PrIXnFzZ6WeDya2bTTfkWudrQ99ZPLURkzGrpgKScmFEvvRwRDxoh_0XtcKMdOuxBxN0DL8873GO9_KWLWJLUT4CnmeiDvWEEMOQDKdXHDejqcNaRZlVI4gBoL0wn2O2gUdTYafMzDcNJDfBT6LNxDTtT8LGKdeDs2Z7CZzn2M5Gks",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/products-by-room/2",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"products-by-room",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "top-selling-products",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/top-selling-products",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"top-selling-products"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Rooms",
+							"item": [
+								{
+									"name": "allRooms",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/rooms",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"rooms"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "like-dislik",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTljYmIwMTM4NWM0ZmZjNWZhZjAyYThkY2YzNzNmYzEyMDA5ZWU2OGJlYTZmZmE3ZDMyZDQzYjcyZGNiMjUwNWFkNWRkMThjZWEzMDM4NTciLCJpYXQiOjE2NjkwMzAwNjMuMTQzODkxLCJuYmYiOjE2NjkwMzAwNjMuMTQzODk2LCJleHAiOjE3MDA1NjYwNjMuMTM1NjI2LCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.I_uXCWSMvd5M7-Ou6Iedno-nzLNgDo9PLVa6A0eYr28na_9Zkp5QLYaR5vI-VsKnNqN8TQz4MRfPKxLXHrvp62sYyMGuRVZbnpGjuvnd1HcR8tvJ31Yi2rODFKtNwhudfJxCPl07dxSefufoscQZv_sQq2ZeP6GMcaqwZlL9xkYbxhSMPq26Ep8jFE-RldvKaQU1TG_hVQ9z2dLRLpoblKgyhPvPQEY9u5NvkdksbgwBxpBJbv2pGzPWLumL0KDQd88lwAUGdinG3XdKaz9br5MISXThg4RcOjOBBwc0rV58X6s50kLIFbTIoXaHWGy5Jf-4tLabiIsnDK7rbhp_r-Kd_cC2ijmDCHHXL2MOdcJcsreJzt1V7jixycg9pOLZ365eZt5Nh2rW1iXo6xcCInraqpfbVu3YExkaoYKJWV50jPDE-XLsLW_oPM0ZSo3VGiVlSyg6I0ItNo-OpjEJt6M8Ggtib_SLQnPDmFnc_p5NbH7rMq7ad-5Azbl9CTBbI3exSQY_wiixi9ibOicLBMTIWOD5YTQmtAhzkgK2eFs507ckpIbpUSc4t5-jantduHNcwn2gMBSPkiQeSyqLf8CVGD9m-aP-Bjrj0kqhmVBA4hWzVLJzYx_HBd2nJzen78W9LGNRQ-jSbhF1wi-zws1UylUOMYoldlghhfJN7rQ",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\": 3,\r\n    \"action_type\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/like-dislike",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"like-dislike"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "like-dislike-multi",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTJhOTEyYjIxOTEzYTZmMDFkNjc1MTY5OWVhMjNjMmIzYzhiMWEyMmNjZDk0N2E4MWUxNDAzOTUzMTBjOWZlNzNmM2RiNDcxNjgwYjdjMzciLCJpYXQiOjE2Njc3MzU0ODEuNjk1OCwibmJmIjoxNjY3NzM1NDgxLjY5NTgwNiwiZXhwIjoxNjk5MjcxNDgxLjY5MDk3Mywic3ViIjoiOSIsInNjb3BlcyI6WyJjdXN0b21lciJdfQ.hTRyE7xUmaBwarq5cvVUcmmMz5Qq2fGgPJRRML5-P5rsucHL4zOmGv66_TbY73N-HHmtZitkjxzs-1dMYyNwmfFNhvUoe8KoaUwEzqZy4A-Hgxs8j5TNyYNFrqody7Dn7HtVFseO-u_M9teV5q-W7KDD_mDci0OqsgggditaGQxllaV3P32jp2aFU6mJQtvN74tGrONPmroexTilXj5b-mtt15HqR-5xT7OWxtSU8wbzszre41BUJPAl3iZScXR_1Df-Lu0KKlkWVQA0jxWph57EjPvnDrN4mx0gFFRAa_5DpYD_qRCIYOCgdeDDT6QzexUkx4fXf0yrGwOnD5M4qfkW1uaXeBf0a203WlgXJUdSqRZPz2Y74KtnioZTZK1KU4mB6vt3utiDbBqclVIz5bod0dt-MhewnE_XLGEA1dT24ew6m78huULZgpsCORLJMAFAMIf_dXOnOWvD87kdvME8uWQgzInvPx3EcXJFIggkHbAKIpoR9Uai-mH3uYek2t_wb2Ayp80I50Q_bRiFga4q73AcCUQECd9jsKgJ_AI89nZ1CWmcMkQFMticumDBXfw0FSJCQPcZX43O3SexBiDNi4W6Mlng-ekPj1iUwoUEgB69QcfjCVxFNYuewj75C6FFpKr7NSisVQTcgybM_fwV3JeoUPyE1NBYEApJ3Fk",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"liked_products\": [1, 2, 4],\r\n    \"disliked_products\": [3, 5, 6]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/like-dislike-group",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"like-dislike-group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "like-dislike-multi-last",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTJhOTEyYjIxOTEzYTZmMDFkNjc1MTY5OWVhMjNjMmIzYzhiMWEyMmNjZDk0N2E4MWUxNDAzOTUzMTBjOWZlNzNmM2RiNDcxNjgwYjdjMzciLCJpYXQiOjE2Njc3MzU0ODEuNjk1OCwibmJmIjoxNjY3NzM1NDgxLjY5NTgwNiwiZXhwIjoxNjk5MjcxNDgxLjY5MDk3Mywic3ViIjoiOSIsInNjb3BlcyI6WyJjdXN0b21lciJdfQ.hTRyE7xUmaBwarq5cvVUcmmMz5Qq2fGgPJRRML5-P5rsucHL4zOmGv66_TbY73N-HHmtZitkjxzs-1dMYyNwmfFNhvUoe8KoaUwEzqZy4A-Hgxs8j5TNyYNFrqody7Dn7HtVFseO-u_M9teV5q-W7KDD_mDci0OqsgggditaGQxllaV3P32jp2aFU6mJQtvN74tGrONPmroexTilXj5b-mtt15HqR-5xT7OWxtSU8wbzszre41BUJPAl3iZScXR_1Df-Lu0KKlkWVQA0jxWph57EjPvnDrN4mx0gFFRAa_5DpYD_qRCIYOCgdeDDT6QzexUkx4fXf0yrGwOnD5M4qfkW1uaXeBf0a203WlgXJUdSqRZPz2Y74KtnioZTZK1KU4mB6vt3utiDbBqclVIz5bod0dt-MhewnE_XLGEA1dT24ew6m78huULZgpsCORLJMAFAMIf_dXOnOWvD87kdvME8uWQgzInvPx3EcXJFIggkHbAKIpoR9Uai-mH3uYek2t_wb2Ayp80I50Q_bRiFga4q73AcCUQECd9jsKgJ_AI89nZ1CWmcMkQFMticumDBXfw0FSJCQPcZX43O3SexBiDNi4W6Mlng-ekPj1iUwoUEgB69QcfjCVxFNYuewj75C6FFpKr7NSisVQTcgybM_fwV3JeoUPyE1NBYEApJ3Fk",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"products_ids\": [1, 2, 4],\r\n    \"action_type\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/like-dislike-group",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"like-dislike-group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "like-dislike/{actoin_type}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTljYmIwMTM4NWM0ZmZjNWZhZjAyYThkY2YzNzNmYzEyMDA5ZWU2OGJlYTZmZmE3ZDMyZDQzYjcyZGNiMjUwNWFkNWRkMThjZWEzMDM4NTciLCJpYXQiOjE2NjkwMzAwNjMuMTQzODkxLCJuYmYiOjE2NjkwMzAwNjMuMTQzODk2LCJleHAiOjE3MDA1NjYwNjMuMTM1NjI2LCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.I_uXCWSMvd5M7-Ou6Iedno-nzLNgDo9PLVa6A0eYr28na_9Zkp5QLYaR5vI-VsKnNqN8TQz4MRfPKxLXHrvp62sYyMGuRVZbnpGjuvnd1HcR8tvJ31Yi2rODFKtNwhudfJxCPl07dxSefufoscQZv_sQq2ZeP6GMcaqwZlL9xkYbxhSMPq26Ep8jFE-RldvKaQU1TG_hVQ9z2dLRLpoblKgyhPvPQEY9u5NvkdksbgwBxpBJbv2pGzPWLumL0KDQd88lwAUGdinG3XdKaz9br5MISXThg4RcOjOBBwc0rV58X6s50kLIFbTIoXaHWGy5Jf-4tLabiIsnDK7rbhp_r-Kd_cC2ijmDCHHXL2MOdcJcsreJzt1V7jixycg9pOLZ365eZt5Nh2rW1iXo6xcCInraqpfbVu3YExkaoYKJWV50jPDE-XLsLW_oPM0ZSo3VGiVlSyg6I0ItNo-OpjEJt6M8Ggtib_SLQnPDmFnc_p5NbH7rMq7ad-5Azbl9CTBbI3exSQY_wiixi9ibOicLBMTIWOD5YTQmtAhzkgK2eFs507ckpIbpUSc4t5-jantduHNcwn2gMBSPkiQeSyqLf8CVGD9m-aP-Bjrj0kqhmVBA4hWzVLJzYx_HBd2nJzen78W9LGNRQ-jSbhF1wi-zws1UylUOMYoldlghhfJN7rQ",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/like-dislike/1",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"like-dislike",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Collages",
+					"item": [
+						{
+							"name": "getCollages/{paginate?}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMmI1MGRlZjRjNGU3OTdlMjk0ZjA0ZDA4N2VhNWM5MjVmZjQzN2VhOTcyZGM2NWM0MGI5MDkzYjE5M2JmYTFkNWUyMDIyMjVmZTdmMWJmM2EiLCJpYXQiOjE2NzM5NTg3NDEuNzk5MzcxLCJuYmYiOjE2NzM5NTg3NDEuNzk5Mzc1LCJleHAiOjE3MDU0OTQ3NDEuNzk0MjY4LCJzdWIiOiIyIiwic2NvcGVzIjpbImN1c3RvbWVyIl19.UMmGDwo1IvSq17qCa73fqtFUZTaWiu9tSB5o6H82cV0rNjlYRrV-WwY65g7fRaJ-c6veL0Jn69lVen0elqEKGQ1UvOcQbbFuNdrLMUd9ciV__5ysC0t37ABsL9PnGDN505QhinAXly9UP7VBNXS0ed-frxIUpJpHkFPQsyvy_npTzLvSoF5b_MUU5IpS7l-wmJM3kRZltwkl0b26N_L0vAe4rWniFpcno0FoVcqwhyA-nm0AuFi57EK1rjJDApZdohZDoLxE2rHC52A-tbVdESTGWPKZlYVYSeD-mfbB4DmXAZKu8oyF72nn3nnRUUiezRTY3aRXDcfr3KqSgAds8YNOjsGvxIlxfQz6Ev07oLEYN837tFlqAXCC8i9dJYKwNDz3dB3E3nARABj0Nu4FxAN44xKffOn6l59hjlIG1P99rQZvJ_HHiAmKEmqayldLvoVEO63fefAo3yhJxG2AGAIU_e5czxKbCAwotyJcJrFsr8_laYBMNJtRrhnjRlY2MaTVRBHR2WADKmRw0Zllkon-YSyHYK5_WTLr9wqkfRYxWehPpEeRkvpiCpoBjqvYValRfDUzQiRfj3gXDtShjCRmA3HKdDQOini6-kQ1s4KySJE1RAWRWipVFSsTAXNJmdRPUgrRR-V6L3dM0WeqA6QXD3hAv_CEbaRqjdDlotE",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/collages-all",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"collages-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addCollage",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMmI1MGRlZjRjNGU3OTdlMjk0ZjA0ZDA4N2VhNWM5MjVmZjQzN2VhOTcyZGM2NWM0MGI5MDkzYjE5M2JmYTFkNWUyMDIyMjVmZTdmMWJmM2EiLCJpYXQiOjE2NzM5NTg3NDEuNzk5MzcxLCJuYmYiOjE2NzM5NTg3NDEuNzk5Mzc1LCJleHAiOjE3MDU0OTQ3NDEuNzk0MjY4LCJzdWIiOiIyIiwic2NvcGVzIjpbImN1c3RvbWVyIl19.UMmGDwo1IvSq17qCa73fqtFUZTaWiu9tSB5o6H82cV0rNjlYRrV-WwY65g7fRaJ-c6veL0Jn69lVen0elqEKGQ1UvOcQbbFuNdrLMUd9ciV__5ysC0t37ABsL9PnGDN505QhinAXly9UP7VBNXS0ed-frxIUpJpHkFPQsyvy_npTzLvSoF5b_MUU5IpS7l-wmJM3kRZltwkl0b26N_L0vAe4rWniFpcno0FoVcqwhyA-nm0AuFi57EK1rjJDApZdohZDoLxE2rHC52A-tbVdESTGWPKZlYVYSeD-mfbB4DmXAZKu8oyF72nn3nnRUUiezRTY3aRXDcfr3KqSgAds8YNOjsGvxIlxfQz6Ev07oLEYN837tFlqAXCC8i9dJYKwNDz3dB3E3nARABj0Nu4FxAN44xKffOn6l59hjlIG1P99rQZvJ_HHiAmKEmqayldLvoVEO63fefAo3yhJxG2AGAIU_e5czxKbCAwotyJcJrFsr8_laYBMNJtRrhnjRlY2MaTVRBHR2WADKmRw0Zllkon-YSyHYK5_WTLr9wqkfRYxWehPpEeRkvpiCpoBjqvYValRfDUzQiRfj3gXDtShjCRmA3HKdDQOini6-kQ1s4KySJE1RAWRWipVFSsTAXNJmdRPUgrRR-V6L3dM0WeqA6QXD3hAv_CEbaRqjdDlotE",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Test Collage from User",
+											"type": "default"
+										},
+										{
+											"key": "products",
+											"value": "74,73",
+											"type": "default"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/mohammad/Downloads/gareth-david-XcaOZzleORA-unsplash.jpg"
+										},
+										{
+											"key": "collage_images[]",
+											"type": "file",
+											"src": "/C:/Users/mohammad/Downloads/katarzyna-grabowska-rMYGCAI_-zU-unsplash.jpg"
+										},
+										{
+											"key": "collage_images_descriptions[]",
+											"value": "{\"height\": 1, \"width\":1, \"order\":1, \"x\":1, \"y\":1, \"is_product\":0,\"product_id\":2}",
+											"type": "default"
+										},
+										{
+											"key": "collage_images_descriptions[]",
+											"value": "{\"height\": 1, \"width\":1, \"order\":1, \"x\":1, \"y\":1, \"is_product\":1,\"product_id\":3}",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "collage_images_descriptions[]",
+											"value": "{\"height\": 1, \"width\":1, \"order\":1, \"x\":1, \"y\":1, \"is_product\":1,\"product_id\":1}",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/collages",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"collages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateCollage/{collage_id}",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjE4MzBjZmY2YTI3MGI4NjRmMmYwMmU1YzNhNmVkZmY3ZDYwMzgxNGVjZGZhZTRjZmE2MTdmZDM4YzNmMzdiYmU2YjIwN2NkMTcxOTJmMTUiLCJpYXQiOjE2Njg5NTM3OTkuMjQzMDQ2LCJuYmYiOjE2Njg5NTM3OTkuMjQzMDQ5LCJleHAiOjE3MDA0ODk3OTkuMjQyMDczLCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.fx_R6BEOQFBt24FI8P57LlxhWgijq8j1MjqB5CC_4bNCdQnMEw8lwaucZcLQTdFq-JR9cjcOXkvFhWhKaGU5kAU25SOStAIJJE7XFrfUS3IHvi3Y_OpwE5Qt2eGzHr7Mw6-jUD1twlwlzH0MNGJVjzfm5mptYIig3S2wbhhhi-gE_wiq5YpVBo9NtySI4-H9ZdCj9YzWpBdtgWcwAeYOPJC1BK8qLaSvKvMiHhpp8mskd9SBDWiHhGxTNbPQiPDxml7L60bxEplhAQFgJttJYQy_X4IloeWjAn_TK3QcgShkHWwx2m34J7C5xJ8tQbWWsvWzRTKRTSdlnpUx0Ozt-RzrHkz8Ilb1Yp9LqJauE12c-2AAlT790cv9PXp8cle1OVcRmjvcprit2se4rCuKmnXV1Bapn5wcHgWhNfgMwlBQvR27EzRY3jCseWqtiLuLmhy1P8VQiMDXWHauZBrpX6vL-iIdIfvlslE97MXq7VL4oTaKkG_UYU8YdU_UqDinCC04-LGDIZS9M6hJznjObdhTAAstohLR9JnZCti2X4OiJ-M1QMd1dysXhbyZXboPDdLM23s3xh00LK6s9pgUvEAq0m0eIkGKTDolQV52DRiYOTaUMTZv9OIPiGhx0ZlB5ZEOzNeBALDkg_x_EszNXk45lsy55M_MafJpWmeDkvw",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Test Update Collage from User",
+											"type": "default"
+										},
+										{
+											"key": "products",
+											"value": "1,2,3",
+											"type": "default"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/TechsExperts/Downloads/1666258216_Z1OruWSMpZBI0pah2BmKorWm7ZdgB4qw9j72srP4.jpg"
+										},
+										{
+											"key": "collage_images[]",
+											"type": "file",
+											"src": [
+												"/C:/Users/TechsExperts/Downloads/DK5JPARF15PV0eXjsQ2yqZz9RSK57AfqMA8WoJRj.png",
+												"/C:/Users/TechsExperts/Downloads/1666258216_Z1OruWSMpZBI0pah2BmKorWm7ZdgB4qw9j72srP4.jpg"
+											]
+										},
+										{
+											"key": "collage_images_descriptions[]",
+											"value": "{\"height\": 1, \"width\":1, \"order\":1, \"x\":1, \"y\":1, \"is_product\":0,\"product_id\":5}",
+											"type": "default"
+										},
+										{
+											"key": "collage_images_descriptions[]",
+											"value": "{\"height\": 1, \"width\":1, \"order\":1, \"x\":1, \"y\":1, \"is_product\":1,\"product_id\":null}",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{SHOPSERVER}}/client/update-collage-api/44",
+									"host": [
+										"{{SHOPSERVER}}"
+									],
+									"path": [
+										"client",
+										"update-collage-api",
+										"44"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "myCollages/{paginate?}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMmI1MGRlZjRjNGU3OTdlMjk0ZjA0ZDA4N2VhNWM5MjVmZjQzN2VhOTcyZGM2NWM0MGI5MDkzYjE5M2JmYTFkNWUyMDIyMjVmZTdmMWJmM2EiLCJpYXQiOjE2NzM5NTg3NDEuNzk5MzcxLCJuYmYiOjE2NzM5NTg3NDEuNzk5Mzc1LCJleHAiOjE3MDU0OTQ3NDEuNzk0MjY4LCJzdWIiOiIyIiwic2NvcGVzIjpbImN1c3RvbWVyIl19.UMmGDwo1IvSq17qCa73fqtFUZTaWiu9tSB5o6H82cV0rNjlYRrV-WwY65g7fRaJ-c6veL0Jn69lVen0elqEKGQ1UvOcQbbFuNdrLMUd9ciV__5ysC0t37ABsL9PnGDN505QhinAXly9UP7VBNXS0ed-frxIUpJpHkFPQsyvy_npTzLvSoF5b_MUU5IpS7l-wmJM3kRZltwkl0b26N_L0vAe4rWniFpcno0FoVcqwhyA-nm0AuFi57EK1rjJDApZdohZDoLxE2rHC52A-tbVdESTGWPKZlYVYSeD-mfbB4DmXAZKu8oyF72nn3nnRUUiezRTY3aRXDcfr3KqSgAds8YNOjsGvxIlxfQz6Ev07oLEYN837tFlqAXCC8i9dJYKwNDz3dB3E3nARABj0Nu4FxAN44xKffOn6l59hjlIG1P99rQZvJ_HHiAmKEmqayldLvoVEO63fefAo3yhJxG2AGAIU_e5czxKbCAwotyJcJrFsr8_laYBMNJtRrhnjRlY2MaTVRBHR2WADKmRw0Zllkon-YSyHYK5_WTLr9wqkfRYxWehPpEeRkvpiCpoBjqvYValRfDUzQiRfj3gXDtShjCRmA3HKdDQOini6-kQ1s4KySJE1RAWRWipVFSsTAXNJmdRPUgrRR-V6L3dM0WeqA6QXD3hAv_CEbaRqjdDlotE",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/myCollages",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"myCollages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCollage/{collage_id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzU4NDEzZTdlOTM0ODNiOWM4ZmJmOWEwZGQzYzMwN2I5OTdhMmJhOWU1ZGIxM2ZmNDVjMDcxMjk3NmJlNzQwNTUzN2NiNDNkZGUxMTc2YjAiLCJpYXQiOjE2NzE2OTU2ODMuODk2MDU5LCJuYmYiOjE2NzE2OTU2ODMuODk2MDY5LCJleHAiOjE3MDMyMzE2ODMuODExMjYyLCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.Sz92hka9aW-mCrNEPQnULn0ybX_cdN3dHzcvCLB0dRnqG834WDbFYTZ0YOuY-yrt-Q4vw4c6pDLjLf1hr5HWVHaFQzjEW0AhJ3LJ2RZwfll7HwyImMYGXibsgLEJYaa-cKTc2hQZAe7325mRnVkGgyRI3NLCJIjWLY3UtUE3cmI3qtev7163VOsuFgKMyu6LA8aLNff6X4ziIvKTROYI4xg6A4Z0Hc-xAr9xeADPFHRUVmz--DAjNXm14pSYTx3icWJz9ToB0syZWwu2VYgRv62qUmj-K8oImBNFMmf0CP3LFBjGykE4qtCz8oKqmjRk18y0htlXaYS_yQWZ6rcrS3xLLh8EFrqesaS1jSg2Ef4vZOhZlypt4-6-OVoU-Xso6Rbo-fVuTCLl0CEGsTtLbON0O3zZahVMHXhSGrhXTmfA2vXh_kBxEyDxiTRsUOQB2Vr5cN1N6HUP-FR1-KQgRuX_E7Tjd3N7XNzkG_RQKs27D8AmC7gBpM5fljlkrlfmcrUvmDxrGj5-YuDIq7Mjd1CPtJoQ7ze6LZa2iFQyby12nz41EbcF-p1zJNHuartDuTGe27aOvEq2ETR2ErrByUL_VujbQTNT4BxgFt_6-aXMwoglHO2o7gc6Cj4UOcSWVm37v4RbOMDEvjL6MtZhLuN2ACZLJNUxAxYuDikVEkg",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/collages/33",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"collages",
+										"33"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "collagesByVendor/{vendor_id}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/collages-by-vendor/11",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"collages-by-vendor",
+										"11"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addCollageToCart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTlhZGIxNmI2MzBiYzYxMTU3YTBhYmVkNjhiNWY1MTU1ODU4ZGI1MjQ5MWI3OTViMzZlMDczZGJiMGZmZTJiYTYyZjVlOWI0NDk5ZDFiMDMiLCJpYXQiOjE2NzA3NTQyNzIuNjUyNTgxLCJuYmYiOjE2NzA3NTQyNzIuNjUyNTg0LCJleHAiOjE3MDIyOTAyNzIuNjUxMDgxLCJzdWIiOiI0NCIsInNjb3BlcyI6WyJjdXN0b21lciJdfQ.r_OKJFJ6ZZHXg_5rEnCdKVD_qK_dIivH91XSBRSZZ3zkqa-l0Xwg9wpN61nqMQ-uQXWENkBzpVZs0nL9CDbaaPLmJsM6RCLd6XYT-5IS1soRO15QFHmaTjnfN86pjmcLndP_CS6NgjaEgYay81I9tfOL8eHo7bAUX2pIjk9Ee9FplY-oscnRQriGXilhWUMUtsX0NoZum1L4xE-RkgXqvYgyxidISYa0LyF8nLCb-8MvZloPGiqO43iuQMBQj-eWhpArXjY7XhXEOFOApiNnFd6_FTIVm7MkhAVvzMIDb3EWcj4ZkzncY67ndOliXFv5oLgk2l3CGiybgpaZ8AjluKHntnCgiyad1Esdnyp6BNVdm1RCmhMnusP6TDmUMpGSSpYa6uqkSAdocPLJbQ63a3py0OR8twd5Vh8SefVjFqAhg3Ng7k-LqXcl8fUOsDNzEIKtJxOJlIqs3sYHHS0yYXns91WQDonhItLG70KSO4kUbNicvbkfA5b9_FPo2PrIXnFzZ6WeDya2bTTfkWudrQ99ZPLURkzGrpgKScmFEvvRwRDxoh_0XtcKMdOuxBxN0DL8873GO9_KWLWJLUT4CnmeiDvWEEMOQDKdXHDejqcNaRZlVI4gBoL0wn2O2gUdTYafMzDcNJDfBT6LNxDTtT8LGKdeDs2Z7CZzn2M5Gks",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\": 6,\r\n    \"qty\": 1,\r\n    \"is_collage\": 1,\r\n    \"is_offer\": 0\r\n}"
+								},
+								"url": {
+									"raw": "{{SHOPSERVER}}/client/addCollageToCart",
+									"host": [
+										"{{SHOPSERVER}}"
+									],
+									"path": [
+										"client",
+										"addCollageToCart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TopCollages",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/top-collages",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"top-collages"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "MyCategories",
+					"item": [
+						{
+							"name": "list-my-categories/{vendor_id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDg5MTE4YjhjYmIwMTE4MjQ4MWZlODA3NzIwZjFjZjA5MWZkNWFmNTQ4OTdmZDRlYTRjMTBlMWU2YjdlMzllMjMyZWJjOTY2Yzg0ZjcyZDciLCJpYXQiOjE2NzE2OTY2MjIuNDUwNDM3LCJuYmYiOjE2NzE2OTY2MjIuNDUwNDQxLCJleHAiOjE3MDMyMzI2MjIuNDQzNzIsInN1YiI6IjkiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.H5Y_lisiHr0VjXQysxBMN7tMOM8A6r9HTSH49LXSK0iOqFQ99ZIwA8X-GadbEuTxiCOVeZVcKutgVt3sF8VxcQUZQ5jsVMDKV_ni9MMXsbxkeNvfSibcuEsHZaBYfZc6XSfO66VrVasWS7o7yGtN7kcdBnqNJKImX46bY-ulh6ouBlWtv-0Ht-9O49r7YA1lPoRkPbLCvQ5yP7zV9qhD_pL4I0V-n6213vGHwALKXpFCR8hzaE8o2-oGVTlPPtI0zVgmZ0kIgtA7uNWz-qx_T8jZuGmfI9Q5_0lurcpNLZj_5A5Wb1spEi_CUwTzQlqnC1LZrO3riDbgbW8sZr00anAvGCgDp4b3favey6YNCt1uob9g92_q4yIBl6V0wpT3Iyay36qsNAWHnpx4oqlElQfZEDrly5Gx-qgA3yPV674e0S1jOlNbVWx06GvIys7T5q89f48hqmwP08qxTnWf92HPJ-5p1CvjS4UfjTnii3easnX1RjtZttB_W11OM562YjQU55-uPAxPGk7FeC51VqJhUZZgqtoRPE5jJ2NsTZIlkGBBPOzQVxd0tXnMbm0ixZgIiten5EUqiB3r33TYjaf6JEGJio8yRlSKL4l9gaEKiQa6dqMHSh32N_h6eSqEXhJECjg57EaJE5oOyS1KobrCRTJQqLoKkFQw-8bE-ig",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/my-categories/11",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"my-categories",
+										"11"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add-to-my-categories",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTJhOTEyYjIxOTEzYTZmMDFkNjc1MTY5OWVhMjNjMmIzYzhiMWEyMmNjZDk0N2E4MWUxNDAzOTUzMTBjOWZlNzNmM2RiNDcxNjgwYjdjMzciLCJpYXQiOjE2Njc3MzU0ODEuNjk1OCwibmJmIjoxNjY3NzM1NDgxLjY5NTgwNiwiZXhwIjoxNjk5MjcxNDgxLjY5MDk3Mywic3ViIjoiOSIsInNjb3BlcyI6WyJjdXN0b21lciJdfQ.hTRyE7xUmaBwarq5cvVUcmmMz5Qq2fGgPJRRML5-P5rsucHL4zOmGv66_TbY73N-HHmtZitkjxzs-1dMYyNwmfFNhvUoe8KoaUwEzqZy4A-Hgxs8j5TNyYNFrqody7Dn7HtVFseO-u_M9teV5q-W7KDD_mDci0OqsgggditaGQxllaV3P32jp2aFU6mJQtvN74tGrONPmroexTilXj5b-mtt15HqR-5xT7OWxtSU8wbzszre41BUJPAl3iZScXR_1Df-Lu0KKlkWVQA0jxWph57EjPvnDrN4mx0gFFRAa_5DpYD_qRCIYOCgdeDDT6QzexUkx4fXf0yrGwOnD5M4qfkW1uaXeBf0a203WlgXJUdSqRZPz2Y74KtnioZTZK1KU4mB6vt3utiDbBqclVIz5bod0dt-MhewnE_XLGEA1dT24ew6m78huULZgpsCORLJMAFAMIf_dXOnOWvD87kdvME8uWQgzInvPx3EcXJFIggkHbAKIpoR9Uai-mH3uYek2t_wb2Ayp80I50Q_bRiFga4q73AcCUQECd9jsKgJ_AI89nZ1CWmcMkQFMticumDBXfw0FSJCQPcZX43O3SexBiDNi4W6Mlng-ekPj1iUwoUEgB69QcfjCVxFNYuewj75C6FFpKr7NSisVQTcgybM_fwV3JeoUPyE1NBYEApJ3Fk",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"category_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPSERVER}}/client/add-to-my-categories",
+									"host": [
+										"{{SHOPSERVER}}"
+									],
+									"path": [
+										"client",
+										"add-to-my-categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add-to-my-categories-multi",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZWNjNzcxNDJiNjU5MGUwNmU5NWVlMzMyZWViMGNhZjk2ZTE0OTVhZmNiYzFjZjk1M2M0YzQyNjM5YjVlM2EyNTMzMjFjMzE4NjA4YmNjZmYiLCJpYXQiOjE2Njc3Mzc0MjQuNDU5MDgzLCJuYmYiOjE2Njc3Mzc0MjQuNDU5MDg3LCJleHAiOjE2OTkyNzM0MjQuNDU3Mzg1LCJzdWIiOiIxMCIsInNjb3BlcyI6WyJjdXN0b21lciJdfQ.wqTh6pCVJ1hbFrRDZRNVLNM8GpS-c02Ys4Xxe2KzShZXvDBUnIcrq-Waa8mboWv-iKQuJu8rUW7q1B81V7YCh0n5JH3GtJ8D770hZ50jLks0J4n31iPT4t7gbYardlL2CufCTNUheXzA4A3cfBB6kpSufc7bQHvKC1vHfn9MTLqGsNurFDxvPmFpvuplPbzLgFePDFosW_3ZqCeAwPSDkKhGgNRgyY5HFpr2YF1kQGBY2BGpMQwYfAbiK0G0aTXejqVo0RCMlWv-SGhTDd2Ep0m8UtXNRkSeoP4Ur6fFOlFyyZbSZgq96Bzdqld1O-YmtRyo9LsJydbsTZcAX2fJN2vIFQtL4pkBs-wmb6JDh3dBiypVrVzudSxc-gihVMnd4iLxJgDWQ-XSkdiIQAF4snV_jVDzIdZliv6v1f67nrjm5DwDin_YvYk2jTsc51wjpQTp9-SKW8vAC-CkZusykQ1Kk5UpxVTt-q7Qv6-dNm_kLl-vlXG1pR86jhwGOp8vPxLlJrcxdcNZbBcGTrHvLEhLHGCcfhQd4G74H1FyTfiHVH8LdXcnTXXj_0vSOyVsihW5ToY2EHQTIKgHvT3PWQp9Mu4GO3ZTgHWh40YnxcerOaj7LTaO9zPXRwmaQOZNETZDOEVfh_U7O2D9sVyrDBJJ1h5EvcwHyW7LnRQ1zb4",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categories_ids\": [1, 3, 4]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPSERVER}}/client/add-to-my-categories-multi",
+									"host": [
+										"{{SHOPSERVER}}"
+									],
+									"path": [
+										"client",
+										"add-to-my-categories-multi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "remove-from-my-categories/{id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZWNjNzcxNDJiNjU5MGUwNmU5NWVlMzMyZWViMGNhZjk2ZTE0OTVhZmNiYzFjZjk1M2M0YzQyNjM5YjVlM2EyNTMzMjFjMzE4NjA4YmNjZmYiLCJpYXQiOjE2Njc3Mzc0MjQuNDU5MDgzLCJuYmYiOjE2Njc3Mzc0MjQuNDU5MDg3LCJleHAiOjE2OTkyNzM0MjQuNDU3Mzg1LCJzdWIiOiIxMCIsInNjb3BlcyI6WyJjdXN0b21lciJdfQ.wqTh6pCVJ1hbFrRDZRNVLNM8GpS-c02Ys4Xxe2KzShZXvDBUnIcrq-Waa8mboWv-iKQuJu8rUW7q1B81V7YCh0n5JH3GtJ8D770hZ50jLks0J4n31iPT4t7gbYardlL2CufCTNUheXzA4A3cfBB6kpSufc7bQHvKC1vHfn9MTLqGsNurFDxvPmFpvuplPbzLgFePDFosW_3ZqCeAwPSDkKhGgNRgyY5HFpr2YF1kQGBY2BGpMQwYfAbiK0G0aTXejqVo0RCMlWv-SGhTDd2Ep0m8UtXNRkSeoP4Ur6fFOlFyyZbSZgq96Bzdqld1O-YmtRyo9LsJydbsTZcAX2fJN2vIFQtL4pkBs-wmb6JDh3dBiypVrVzudSxc-gihVMnd4iLxJgDWQ-XSkdiIQAF4snV_jVDzIdZliv6v1f67nrjm5DwDin_YvYk2jTsc51wjpQTp9-SKW8vAC-CkZusykQ1Kk5UpxVTt-q7Qv6-dNm_kLl-vlXG1pR86jhwGOp8vPxLlJrcxdcNZbBcGTrHvLEhLHGCcfhQd4G74H1FyTfiHVH8LdXcnTXXj_0vSOyVsihW5ToY2EHQTIKgHvT3PWQp9Mu4GO3ZTgHWh40YnxcerOaj7LTaO9zPXRwmaQOZNETZDOEVfh_U7O2D9sVyrDBJJ1h5EvcwHyW7LnRQ1zb4",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPSERVER}}/client/remove-from-my-categories/3",
+									"host": [
+										"{{SHOPSERVER}}"
+									],
+									"path": [
+										"client",
+										"remove-from-my-categories",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Content Pages",
+					"item": [
+						{
+							"name": "pages",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SHOPSERVER}}/pages",
+									"host": [
+										"{{SHOPSERVER}}"
+									],
+									"path": [
+										"pages"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ContentEditor",
+					"item": [
+						{
+							"name": "all-editor",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/content-editor",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"content-editor"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Offers",
+					"item": [
+						{
+							"name": "getOffers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/offers",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"offers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "singleOffer/{offerId}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/offers/5",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"offers",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addOfferToCart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMWJiNTZjNTUwZWIxMDBiODJhYjI0OWY2YzkwZWJhYWY1NTUzZmJjZTZhYTk2ZmEzNjlkYTljOTkzNmE4YjNjOTMyNGM4YmVjNGY3YWI4NGQiLCJpYXQiOjE2NjkyODI5MjQuOTA0MDU1LCJuYmYiOjE2NjkyODI5MjQuOTA0MDU4LCJleHAiOjE3MDA4MTg5MjQuODk3MzUsInN1YiI6IjkiLCJzY29wZXMiOlsiY3VzdG9tZXIiXX0.E_m_VgtSAzNh1JBNgAhNragXkLUX2taeoouk-HfoEPo5AAD0NpglUuMWzifp1J81o5WoQfDi-qvmsW7z5PECL6ojoLTFknoM05crfBau6yMetmg59gQ4MAUytl3RKMW1U58yVDuYo7DtKcOfMFTPShr3_98mj74SLPr-u5xNjhnsJr0gePgtonXVltR0fDuzuBTcFlJYSLtW4KBNZ-vhheq5ddM9nmYf6wvQOzPiF-BauenSh_d2TAANLIYjtPMJGQbiT9wD7KXN-4H8_Y64UBJ9sJ9tj2WUuWGFQBjvIgL1ujuc4TlDsBKVP4DqJsVsVtVtd4mZTOuRrzOeoWUIo0OrxpMurgSgN973sFZiMVko8os5vn_WcI4Ika33QJv1sQxVd--YiJIokdWhBlZ8bJf-Xqq3fAoOMFt2q3GWhj1pBZx19UPWzH_yE0eIJOrqhJpf_jutSBA26Lj--7VLteM-U2RwCzBBSBOayaEqIkdYWKyPOImk8b2Gw4kCVLT30iNZWtVZ9k7L5lqwi8SBen1VHOzpnP-Q6l9osQj8Qe_Rhbw2vBw5EYMJScywPrkAuzgBIfpz844kDzZmIu1bixq4zaHDVssBUVFoNZCgrk1DFsNkgDG0YDp1I9fN-Ybl6dBhd_3J2PxGHw64sFN1QecswpW7ntcZuUv4FiN_rWE",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\": 5,\r\n    \"qty\": 3,\r\n    \"is_collage\": 0,\r\n    \"is_offer\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/addOfferToCart",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"addOfferToCart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "OfferByPrice",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/offers-by-price",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"offers-by-price"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "singleOfferByPrice/{offer_id}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/offers-by-price/2",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"offers-by-price",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "topOffers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/top-offers",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"top-offers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Return Requests",
+					"item": [
+						{
+							"name": "my-requests",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjZkY2FhM2NhYjM4OWUzZDliY2FlODAxNGE2YTZhMTE2NzdlN2Y2ZmVlZTJkYjg4Mjc5NzRiYTRmY2IyZjVkZDk2ZTI0YzU3OTVmYjM1ZWYiLCJpYXQiOjE2Njk3MjQyOTYuMzU4MjQ3LCJuYmYiOjE2Njk3MjQyOTYuMzU4MjU4LCJleHAiOjE3MDEyNjAyOTYuMjU3NjM5LCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.rjn0D5u9NRT_QZDL1ps5JNojsA0jkZs7qq6HAQSiHwqqEQd3fHyrAmwgj0YOI0kVHhPHW_f_HPszQgjrkEkcyUgR19qrROaOHeZD2sBVKaRIRmj5A9oezIEeGon4paPaQVO36inQtYH6J7HYgIDtuBwki0aagmk_PggjTJ15HsUAcC1pYQl5ZprqsO06mgshQZktzVVImvpxnkO-Z4cs_nhvS8EK6OIQBMb1aL_oYEppE3_wsO2eo7T_jQSDJ30SXM-EBu3TtETNcEm2DWTBItMh3RKDT7yxYi-V0Zlc4OqpIo40AgYN8Ti87H3vsZk3ZFaNPtJ0wlWIEubwLeyXV8jQOQ8dbYKBFLA9KifrSvz_63mxXDBiY43xJgz_yvNtlbGrIoN0yIuO4alvJPQX6lRebLofaoS69N4tGCI9Owjx1GZunFJ-pM8KhhqP9p-WvjKjTjCPJg2MlBCBAGnSl12pGH7o7Kwdx9L3x6luuEX3k2Vc6iiCN6vMM_1IX8IYGqy4pdp9y2KcUe4MuJFxj-JMuUILxkTfjd2AoRPWS8bP7VygYY-03ERmzLrtQImZGkIBCcZQ9O709MHIx1Vv4v3aRjggoMl4kgGEH9mm8xxpFYbVdlQ9BeN1p69x0pbDwlHid4h1ePza_rOLf8oS76tgkrsCvkpnjEEe7ADNoBc",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/my-requests",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"my-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add-return-request",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjZkY2FhM2NhYjM4OWUzZDliY2FlODAxNGE2YTZhMTE2NzdlN2Y2ZmVlZTJkYjg4Mjc5NzRiYTRmY2IyZjVkZDk2ZTI0YzU3OTVmYjM1ZWYiLCJpYXQiOjE2Njk3MjQyOTYuMzU4MjQ3LCJuYmYiOjE2Njk3MjQyOTYuMzU4MjU4LCJleHAiOjE3MDEyNjAyOTYuMjU3NjM5LCJzdWIiOiI5Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.rjn0D5u9NRT_QZDL1ps5JNojsA0jkZs7qq6HAQSiHwqqEQd3fHyrAmwgj0YOI0kVHhPHW_f_HPszQgjrkEkcyUgR19qrROaOHeZD2sBVKaRIRmj5A9oezIEeGon4paPaQVO36inQtYH6J7HYgIDtuBwki0aagmk_PggjTJ15HsUAcC1pYQl5ZprqsO06mgshQZktzVVImvpxnkO-Z4cs_nhvS8EK6OIQBMb1aL_oYEppE3_wsO2eo7T_jQSDJ30SXM-EBu3TtETNcEm2DWTBItMh3RKDT7yxYi-V0Zlc4OqpIo40AgYN8Ti87H3vsZk3ZFaNPtJ0wlWIEubwLeyXV8jQOQ8dbYKBFLA9KifrSvz_63mxXDBiY43xJgz_yvNtlbGrIoN0yIuO4alvJPQX6lRebLofaoS69N4tGCI9Owjx1GZunFJ-pM8KhhqP9p-WvjKjTjCPJg2MlBCBAGnSl12pGH7o7Kwdx9L3x6luuEX3k2Vc6iiCN6vMM_1IX8IYGqy4pdp9y2KcUe4MuJFxj-JMuUILxkTfjd2AoRPWS8bP7VygYY-03ERmzLrtQImZGkIBCcZQ9O709MHIx1Vv4v3aRjggoMl4kgGEH9mm8xxpFYbVdlQ9BeN1p69x0pbDwlHid4h1ePza_rOLf8oS76tgkrsCvkpnjEEe7ADNoBc",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SHOPLOCAL}}/client/return-request",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"client",
+										"return-request"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vendors",
+					"item": [
+						{
+							"name": "Vendor Siders",
+							"item": [
+								{
+									"name": "vendorsliders/{vendor_id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/vendorsliders/11",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"vendorsliders",
+												"11"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Vendor Images",
+							"item": [
+								{
+									"name": "ImagesByVendor/{vendor_id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/images-by-vendor/11",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"images-by-vendor",
+												"11"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Brands",
+							"item": [
+								{
+									"name": "TopBrands",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTZhMTU5YzNjMjNkMDdiNWQwMWJlODcyZDQ2ZmU3MTljYjZjMjk3MzRlY2I0MzI1OWFmMjFjNmUzYTcwN2Y5NjQwZjk0MTA2ZWRiNTc0ZTciLCJpYXQiOjE2NjcyODczMjkuNjc4OTY2LCJuYmYiOjE2NjcyODczMjkuNjc4OTcxLCJleHAiOjE2OTg4MjMzMjkuNjc0NTU1LCJzdWIiOiI0Iiwic2NvcGVzIjpbImN1c3RvbWVyIl19.rBB-SIU7jbAno_KYVGkllkJcvuk5NvLjwTi6Z6UsYn7r0-qrnmRw8VmTVOqpqhe6ac3ZGiKnkVWdwTDAEEzCUpgZ4ZHK-R67uYdoDqs2h1YExsJKcZ-2YSA385aqfEXLxRerogQTG_WPu-6kIXIO00dietAJkNkWtnTnlLqa2exmJ6esHXFajurFsqAUDnWQUG-8Eig3ThoE3B9WwBMbJ7uzY4yKmQJNSpan5wzrZ4L_lecUmVLHR28a91OACP5TTRv25DRO_PfVZvevVQqJJGBlI3ONKLyu9L6150OaFYPLaxPl56VQBM7PWFfHpraAXB9ucvQ9z0J-lRTHJTxKegIGf_5U5b2DXRyqhQsQl0lvtZ7nmyr-_J1wd20mrRB7fzFAiv0aCC8G5Z1LhDRhOn2mVSdo7ut-naIzxaPFDVO2WyugpF0YgzqeupdWUkAOrgy8Msnl414yUsCzdEDDiKEfnXqPtfWv6x7BUwME0cvSGe518B6zmxfuOBPX6fY_b7ddlEjR1WUhks3bRvP0yeYrdRzcn3bEQdaySbhVnsETw4-egZY66MIqK0ZXDC-O3MDCXcgiJDf6HyXHE7xKep-3PzGYJzLxrvGnve3Y3MiSex1-SZyQJWtQ0QZ2wNQBsimGRoKGCBf-EiU5Gd4EsO9fBWNBIZQVaJFcpk_zuFU",
+												"type": "default",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/top-brands",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"top-brands"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "allBrands",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{SHOPLOCAL}}/all-brands",
+											"host": [
+												"{{SHOPLOCAL}}"
+											],
+											"path": [
+												"all-brands"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "single-vendor-by-id/{id}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SHOPLOCAL}}/single-vendor-by-id/11",
+									"host": [
+										"{{SHOPLOCAL}}"
+									],
+									"path": [
+										"single-vendor-by-id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "login Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"mohd@es.truee\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://full.faedg.com/api/client/customer_login",
+					"protocol": "https",
+					"host": [
+						"full",
+						"faedg",
+						"com"
+					],
+					"path": [
+						"api",
+						"client",
+						"customer_login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Customers\",\r\n    \"last_name\": \"Account\",\r\n    \"phone\": \"01234567896\",\r\n    \"email\": \"nouran@user.com\",\r\n    \"password\": \"123456\",\r\n    \"confirm_password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://full.faedg.com/api/client/customer_register",
+					"protocol": "https",
+					"host": [
+						"full",
+						"faedg",
+						"com"
+					],
+					"path": [
+						"api",
+						"client",
+						"customer_register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "SHOPSERVER",
+			"value": "https://full.faedg.com/public/api",
+			"type": "string"
+		},
+		{
+			"key": "SHOPLOCAL",
+			"value": "https://full.faedg.com/public/api",
+			"type": "string"
+		}
+	]
+}

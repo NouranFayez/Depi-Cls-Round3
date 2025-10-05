@@ -12,6 +12,8 @@ export class Global {
 
   isLogin = (localStorage.getItem('token')) ? true : false
 
+  baseUrl = "https://full.faedg.com/public/api"
+
   constructor(private http : HttpClient){
 
   }
@@ -29,11 +31,11 @@ export class Global {
 //  single product ==>  https://dummyjson.com/products/6
 
 login(body:any):Observable<any>{
-  return this.http.post('https://full.faedg.com/public/api/client/customer_login' , body )
+  return this.http.post(`${this.baseUrl}/client/customer_login` , body )
 }
 
 profile():Observable<any>{
-  return this.http.get('https://full.faedg.com/public/api/client/profile')
+  return this.http.get(`${this.baseUrl}/client/profile`)
 }
 
   

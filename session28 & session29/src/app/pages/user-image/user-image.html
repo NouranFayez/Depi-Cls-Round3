@@ -1,0 +1,14 @@
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4 (click)="openFileInput()">Change Image</h4>
+            <input type="file" id="uploadImg" hidden class="form-control" (change)="handleChange($event)">
+            <div class="col-3">
+                <img src="{{imgPath}}" class="w-100" alt="">
+            </div>
+        </div>
+    </div>
+</div>
