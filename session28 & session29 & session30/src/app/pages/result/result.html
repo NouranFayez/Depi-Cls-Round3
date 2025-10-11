@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        @for( item of products | paginate: { id: 'result_search',
+        itemsPerPage: 15,
+        currentPage: p,
+        totalItems: total } ; track $index ){
+        <div class="col-4">
+            <div class="card">
+                <img src="{{item.image}}" class="card-top-img" alt="">
+                <div class="card-body">
+                    <h4>{{item.name}}</h4>
+                </div>
+            </div>
+        </div>
+
+        }
+
+
+
+        <pagination-controls id="result_search" (pageChange)="pageChanged($event)"
+            [maxSize]="9" [directionLinks]="true" [autoHide]="true"
+            [responsive]="true" previousLabel="pre" nextLabel="Nex" screenReaderPaginationLabel="Pagination"
+            screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
+        </pagination-controls>
+    </div>
+</div>
