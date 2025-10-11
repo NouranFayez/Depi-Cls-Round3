@@ -10,6 +10,8 @@ export class Child {
 
  @Input() num :any = 20
 
+ pageTitle = 'count'
+
  constructor(){
   console.log('constructor')
   console.log(this.num)
@@ -23,7 +25,6 @@ export class Child {
   console.log(e)
  }
 
- 
  ngDoCheck(){
   console.log('ng Do Check')
  }
